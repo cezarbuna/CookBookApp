@@ -1,5 +1,6 @@
 ﻿using CookBook.Domain.IRepositories;
 using CookBook.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,49 +12,62 @@ namespace CookBook.Dal.Repositories
 {
     public abstract class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class, IEntity
     {
+        protected readonly CookBookDbContext context;
+        private readonly DbSet<TEntity> dbSet;
+
+        public GenericRepository(CookBookDbContext context)
+        {
+            this.context = context;
+            dbSet = context.Set<TEntity>();
+        }
+
         public bool Any(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return dbSet.Any(predicate);
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Remove(entity);
         }
 
         public IEnumerable<TEntity> FindAll(Expression<Func<TEntity, bool>>? predicate = null)
         {
-            throw new NotImplementedException();
+            if (predicate == null)
+                return dbSet.ToList();
+
+            return dbSet.Where(predicate).ToList();
         }
 
         public TEntity GetEntityBy(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return dbSet.SingleOrDefault(predicate);
         }
 
         public TEntity GetEntityByID(Guid id)
         {
-            throw new NotImplementedException();
+            return dbSet.SingleOrDefault(x => x.Id == id);
         }
 
         public TEntity GetFirstEntityBy(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return dbSet.FirstOrDefault(predicate);
         }
 
         public void Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Add(entity);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            context.SaveChanges();
         }
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Attach(entity);
+            context.Entry(entity).State = EntityState.Modified;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CookBook.Domain
+namespace CookBook.Dal
 {
     public class CookBookDbContext : DbContext
     {
@@ -15,7 +15,7 @@ namespace CookBook.Domain
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
-        public CookBookDbContext(DbContextOptions<CookBookDbContext> options) : base(options)
+        public CookBookDbContext(DbContextOptions options) : base(options)
         {
 
         }

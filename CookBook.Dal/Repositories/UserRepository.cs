@@ -10,6 +10,9 @@ namespace CookBook.Dal.Repositories
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
+        public UserRepository(CookBookDbContext context) : base(context)
+        {
 
+        }
     }
 }

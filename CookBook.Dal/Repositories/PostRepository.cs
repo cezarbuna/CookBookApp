@@ -10,5 +10,9 @@ namespace CookBook.Dal.Repositories
 {
     public class PostRepository : GenericRepository<Post>, IPostRepository
     {
+        public PostRepository(CookBookDbContext context) : base(context)
+        {
+
+        }
     }
 }

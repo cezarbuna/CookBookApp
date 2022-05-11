@@ -10,5 +10,9 @@ namespace CookBook.Dal.Repositories
 {
     public class AdminRepository : GenericRepository<Admin>, IAdminRepository
     {
+        public AdminRepository(CookBookDbContext context) : base(context)
+        {
+
+        }
     }
 }
