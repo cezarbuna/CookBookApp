@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
+      "projectUniqueName": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
       "projectName": "CookBook.Application",
-      "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
+      "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
       "packagesPath": "C:\\Users\\cezar.buna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBook.Application\\obj\\",
+      "outputPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cezar.buna\\AppData\\Roaming\\NuGet\\NuGet.Config",
