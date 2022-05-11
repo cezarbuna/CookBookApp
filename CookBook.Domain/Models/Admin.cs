@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CookBook.Domain.Models
 {
-    internal class Admin
+    public class Admin : BaseEntity
     {
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public Guid AdminId { get; set; }
     }
 }

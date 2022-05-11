@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CookBook.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CookBook.Domain.IRepositories
 {
-    internal class IAdminRepository
+    public interface IAdminRepository : IGenericRepository<Admin>
     {
     }
 }

@@ -1,0 +1,12 @@
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\bin\Debug\net6.0\CookBook.Application.deps.json
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\bin\Debug\net6.0\CookBook.Application.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\bin\Debug\net6.0\CookBook.Application.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.csproj.AssemblyReference.cache
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.AssemblyInfoInputs.cache
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.AssemblyInfo.cs
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.csproj.CoreCompileInputs.cache
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\refint\CookBook.Application.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBook.Application\obj\Debug\net6.0\ref\CookBook.Application.dll
