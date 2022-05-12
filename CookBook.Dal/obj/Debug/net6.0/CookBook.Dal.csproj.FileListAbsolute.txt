@@ -1,0 +1,17 @@
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\bin\Debug\net6.0\CookBook.Dal.deps.json
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\bin\Debug\net6.0\CookBook.Dal.runtimeconfig.json
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\bin\Debug\net6.0\CookBook.Dal.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\bin\Debug\net6.0\CookBook.Dal.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.csproj.AssemblyReference.cache
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.AssemblyInfoInputs.cache
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.AssemblyInfo.cs
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.csproj.CoreCompileInputs.cache
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\refint\CookBook.Dal.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.genruntimeconfig.cache
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\ref\CookBook.Dal.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\bin\Debug\net6.0\CookBook.Domain.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\bin\Debug\net6.0\CookBook.Domain.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Dal\obj\Debug\net6.0\CookBook.Dal.csproj.CopyComplete
