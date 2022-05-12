@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CookBook.Application.Commands;
 using CookBook.Application.Commands.UserCommands;
 using CookBook.Application.Queries.UserQueries;
 using CookBook.Domain.Models;
@@ -66,6 +67,114 @@ namespace CookBook.Controllers
             }
 
             return CreatedAtAction(nameof(GetUserById), new { id = user.Id }, createdUser);
+        }
+
+        [HttpPatch]
+        [Route("{id}/update-user-username/{newUsername}")]
+        public async Task<IActionResult> UpdateUserUsername(Guid id, string newUsername)
+        {
+            var command = new UpdateUserUsername
+            {
+                UserId = id,
+                NewUserUsername = newUsername
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+        
+        [HttpPatch]
+        [Route("{id}/update-user-password/{newPassword}")]
+        public async Task<IActionResult> UpdateUserPassword(Guid id, string newPassword)
+        {
+            var command = new UpdateUserPassword
+            {
+                UserId = id,
+                NewUserPassword = newPassword
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        [Route("{id}/update-user-email/{newEmail}")]
+        public async Task<IActionResult> UpdateUserEmail(Guid id, string newEmail)
+        {
+            var command = new UpdateUserEmail
+            {
+                UserId = id,
+                NewUserEmail = newEmail
+            };
+
+            var result = await _mediator.Send(command);
+
+            if(result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        [Route("{id}/update-user-phoneNumber/{newPhoneNumber}")]
+        public async Task<IActionResult> UpdateUserPhoneNumber(Guid id, string newPhoneNumber)
+        {
+            var command = new UpdateUserPhoneNumber
+            {
+                UserId = id,
+                NewUserPhoneNumber = newPhoneNumber
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        [Route("{id}/update-user-currentOccupation/{newOccupation}")]
+        public async Task<IActionResult> UpdateUserCurrentOccupation(Guid id, string newOccupation)
+        {
+            var command = new UpdateUserCurrentOccupation
+            {
+                UserId = id,
+                NewUserOccupation = newOccupation
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        [Route("{id}/update-user-description/{newDescription}")]
+        public async Task<IActionResult> UpdateUserDescription(Guid id, string newDescription)
+        {
+            var command = new UpdateUserDescription
+            {
+                UserId = id,
+                NewUserDescription = newDescription
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
         }
 
     }
