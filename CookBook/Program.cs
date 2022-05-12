@@ -1,4 +1,6 @@
 using CookBook.Dal;
+using CookBook.Dal.Repositories;
+using CookBook.Domain.IRepositories;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +14,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAdminRepository, AdminRepository>();
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 builder.Services.AddMediatR(typeof(Program));
 

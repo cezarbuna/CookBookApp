@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CookBook.Domain.IRepositories
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface ICommentRepository : IGenericRepository<Comment>
     {
     }
 }
