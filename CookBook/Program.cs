@@ -1,3 +1,4 @@
+using CookBook.Application.Commands.UserCommands;
 using CookBook.Dal;
 using CookBook.Dal.Repositories;
 using CookBook.Domain.IRepositories;
@@ -25,6 +26,8 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+
+builder.Services.AddMediatR(typeof(CreateUser));
 
 builder.Services.AddMediatR(typeof(Program));
 
