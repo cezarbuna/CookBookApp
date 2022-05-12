@@ -64,3 +64,10 @@ C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\obj\Debug\net6.
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\obj\Debug\net6.0\CookBook.pdb
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\obj\Debug\net6.0\CookBook.genruntimeconfig.cache
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\obj\Debug\net6.0\ref\CookBook.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Application.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Dal.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Domain.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Application.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Dal.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Domain.pdb

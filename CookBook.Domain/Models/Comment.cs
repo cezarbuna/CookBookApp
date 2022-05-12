@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CookBook.Domain.Models
 {
-    internal class Comment
+    public class Comment : BaseEntity
     {
+        #region Foreign keys
+        public Guid PostId { get; set; }
+        public Post Post { get; set; }
+        #endregion
+
+        public string Content { get; set; }
     }
 }
