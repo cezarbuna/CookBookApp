@@ -12,3 +12,6 @@ C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Application\obj
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.pdb
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.genruntimeconfig.cache
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Application\obj\Debug\net6.0\ref\CookBook.Application.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Application\bin\Debug\net6.0\CookBook.Domain.dll
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Application\bin\Debug\net6.0\CookBook.Domain.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook.Application\obj\Debug\net6.0\CookBook.Application.csproj.CopyComplete
