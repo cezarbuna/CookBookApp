@@ -1,6 +1,8 @@
 using CookBook.Dal;
 using CookBook.Dal.Repositories;
 using CookBook.Domain.IRepositories;
+using CookBook.Middleware;
+using CookBook.Services;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +16,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddScoped<IScopedService, ScopedService>();
+builder.Services.AddTransient<ITransientService, TransientService>();
+builder.Services.AddSingleton<ISingletonService, SingletonService>();
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAdminRepository, AdminRepository>();
@@ -37,6 +43,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMyMiddleware();
 
 app.MapControllers();
 
