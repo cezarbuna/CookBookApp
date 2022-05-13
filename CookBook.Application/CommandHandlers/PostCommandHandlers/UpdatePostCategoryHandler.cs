@@ -34,7 +34,7 @@ namespace CookBook.Application.CommandHandlers.PostCommandHandlers
             }
             else
             {
-                throw new Exception("You cannot edit other user posts!");
+                throw new Exception("You cannot edit other user's posts!");
             }          
         }
     }
