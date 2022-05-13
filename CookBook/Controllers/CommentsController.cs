@@ -63,5 +63,34 @@ namespace CookBook.Controllers
 
             return CreatedAtAction(nameof(GetCommentById), new { id = comment.Id }, createdComment);
         }
+
+        [HttpPatch]
+        [Route("{id}/{userId}/update-comment-content/{newCommentContent}")]
+        public async Task<IActionResult> UpdateCommentContent(Guid id, Guid userId, string newCommentContent)
+        {
+            var command = new UpdateCommentContent
+            {
+                CommentId = id,
+                UserId = userId,
+                NewContent = newCommentContent
+            };
+
+            Comment result = null;
+
+            try
+            {
+                result = await _mediator.Send(command);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return NotFound();
+            }
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
     }
 }
