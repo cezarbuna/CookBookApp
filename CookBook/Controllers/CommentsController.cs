@@ -92,5 +92,33 @@ namespace CookBook.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete]
+        [Route("{id}/{userId}")]
+        public async Task<IActionResult> DeleteComment(Guid id, Guid userId)
+        {
+            var command = new DeleteComment
+            {
+                CommentId = id,
+                UserId = userId
+            };
+
+            Comment foundComment = null;
+
+            try
+            {
+                foundComment = await _mediator.Send(command);
+
+                if (foundComment == null) return NotFound();
+
+                return NoContent();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return NotFound();
+            }
+           
+        }
     }
 }
