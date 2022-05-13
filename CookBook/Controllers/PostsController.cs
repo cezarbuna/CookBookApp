@@ -78,7 +78,17 @@ namespace CookBook.Controllers
                 NewPostContent = newPostContent
             };
 
-            var result = await _mediator.Send(command);
+            Post result = null;
+
+            try
+            {
+                result = await _mediator.Send(command);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return NotFound();
+            }
 
             if (result == null)
                 return NotFound();
@@ -93,8 +103,52 @@ namespace CookBook.Controllers
             var command = new UpdatePostCategory
             {
                 PostId = id,
-                UserId=userId,
+                UserId = userId,
                 NewCategory = newPostCategory
+            };
+
+            Post result = null;
+
+            try
+            {
+                result = await _mediator.Send(command);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return NotFound();
+            }
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        [Route("like-post/{id}")]
+        public async Task<IActionResult> LikePost(Guid id)
+        {
+            var command = new LikePost
+            {
+                PostId = id
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        [Route("dislike-post/{id}")]
+        public async Task<IActionResult> DislikePost(Guid id)
+        {
+            var command = new DislikePost
+            {
+                PostId = id
             };
 
             var result = await _mediator.Send(command);
