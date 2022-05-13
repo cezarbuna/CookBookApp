@@ -35,6 +35,29 @@ namespace CookBook.Controllers
             return Ok(foundComment);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllComments()
+        {
+            var comments = await _mediator.Send(new GetAllComments());
+
+            var foundComments = _mapper.Map<List<CommentGetDto>>(comments);
+            return Ok(foundComments);
+        }
+
+        [HttpGet]
+        [Route("get-all-comments-by-post-id/{id}")]
+        public async Task<IActionResult> GetAllCommentsByPostId(Guid id)
+        {
+            var query = new GetAllCommentsByPostId
+            {
+                PostId = id
+            };
+            var comments = await _mediator.Send(query);
+
+            var foundComments = _mapper.Map<List<CommentGetDto>>(comments);
+            return Ok(foundComments);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateComment(CommentPutPostDto newComment)
         {

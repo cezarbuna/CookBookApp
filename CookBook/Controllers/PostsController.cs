@@ -35,6 +35,43 @@ namespace CookBook.Controllers
             return Ok(foundPost);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllPosts()
+        {
+            var posts = await _mediator.Send(new GetAllPosts());
+
+            var foundPosts = _mapper.Map<List<PostGetDto>>(posts);
+            return Ok(foundPosts);
+        }
+
+        [HttpGet]
+        [Route("get-all-posts-by-user-id/{id}")]
+        public async Task<IActionResult> GetAllPostsByUserId(Guid id)
+        {
+            var query = new GetAllPostsByUserId
+            {
+                UserId = id
+            };
+            var posts = await _mediator.Send(query);
+
+            var foundPosts = _mapper.Map<List<PostGetDto>>(posts);
+            return Ok(foundPosts);
+        }
+
+        [HttpGet]
+        [Route("get-all-posts-by-category/{category}")]
+        public async Task<IActionResult> GetAllPostsByCategory(int category)
+        {
+            var query = new GetAllPostsByCategory
+            {
+                Category = category
+            };
+            var posts = await _mediator.Send(query);
+
+            var foundPosts = _mapper.Map<List<PostGetDto>>(posts);
+            return Ok(foundPosts);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreatePost(PostPutPostDto newPost)
         {
