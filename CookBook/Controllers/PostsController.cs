@@ -64,5 +64,17 @@ namespace CookBook.Controllers
 
             return CreatedAtAction(nameof(GetPostById), new { id = post.Id }, createdPost);
         }
+
+        [HttpDelete]
+        [Route("id")]
+        public async Task<IActionResult> DeletePost(Guid id)
+        {
+            var command = new DeletePost { PostId = id };
+            var foundPost = await _mediator.Send(command);
+
+            if (foundPost == null) return NotFound();
+
+            return NoContent();
+        }
     }
 }
