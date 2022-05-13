@@ -72,6 +72,18 @@ namespace CookBook.Controllers
             return Ok(foundPosts);
         }
 
+        [HttpGet]
+        [Route("get-all-badly-rated-posts")]
+        public async Task<IActionResult> GetAllBadlyRatedPosts()
+        {
+            var query = new GetAllBadlyRatedPosts();
+
+            var posts = await _mediator.Send(query);
+
+            var foundPosts = _mapper.Map<List<PostGetDto>>(posts);
+            return Ok(foundPosts);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreatePost(PostPutPostDto newPost)
         {
