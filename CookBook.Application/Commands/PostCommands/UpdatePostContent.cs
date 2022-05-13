@@ -11,6 +11,7 @@ namespace CookBook.Application.Commands.PostCommands
     public class UpdatePostContent : IRequest<Post>
     {
         public Guid PostId { get; set; }
+        public Guid UserId { get; set; }
         public string NewPostContent { get; set; }
     }
 }
