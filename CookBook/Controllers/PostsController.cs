@@ -45,7 +45,9 @@ namespace CookBook.Controllers
             {
                 UserId = newPost.UserId,
                 Content = newPost.Content,
-                Liked = newPost.Liked
+                LikeCounter = newPost.LikeCounter,
+                DislikeCunter = newPost.DislikeCunter,
+                Category = newPost.Category
             };
 
             var post = _mapper.Map<PostPutPostDto, Post>(newPost);
@@ -65,8 +67,44 @@ namespace CookBook.Controllers
             return CreatedAtAction(nameof(GetPostById), new { id = post.Id }, createdPost);
         }
 
+        [HttpPatch]
+        [Route("{id}/update-post-content/{newPostContent}")]
+        public async Task<IActionResult> UpdatePostContent(Guid id, string newPostContent)
+        {
+            var command = new UpdatePostContent
+            {
+                PostId = id,
+                NewPostContent = newPostContent
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        [Route("{id}/update-post-category/{newPostCategory}")]
+        public async Task<IActionResult> UpdatePostCategory(Guid id, int newPostCategory)
+        {
+            var command = new UpdatePostCategory
+            {
+                PostId = id,
+                NewCategory = newPostCategory
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
         [HttpDelete]
-        [Route("id")]
+        [Route("{id}")]
         public async Task<IActionResult> DeletePost(Guid id)
         {
             var command = new DeletePost { PostId = id };

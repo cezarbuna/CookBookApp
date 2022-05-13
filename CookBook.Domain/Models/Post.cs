@@ -15,10 +15,13 @@ namespace CookBook.Domain.Models
 
         public string Content { get; set; }
 
-        public int Liked { get; set; } = 0;
+        public int LikeCounter { get; set; } = 0;
+        public int DislikeCunter { get; set; } = 0;
 
-        //if Liked = 0, the post has not been liked or disliked (default value is 0)
-        //if Liked = 1, the post has been liked
-        //if Liked = 2, the post has been disliked
+        public int Category { get; set; } = 1;
+        
+        //Category property has : value 0 for breakfast
+        //                        value 1 for lunch (default)
+        //                        value 2 for dinner
     }
 }

@@ -14,6 +14,8 @@ namespace CookBook.Application.Commands.PostCommands
 
         public string Content { get; set; }
 
-        public int Liked { get; set; } = 0;
+        public int LikeCounter { get; set; } = 0;
+        public int DislikeCunter { get; set; } = 0;
+        public int Category { get; set; } = 1;
     }
 }
