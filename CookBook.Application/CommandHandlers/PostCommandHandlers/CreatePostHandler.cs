@@ -29,7 +29,8 @@ namespace CookBook.Application.CommandHandlers.PostCommandHandlers
                 User = userRepository.GetEntityByID(request.UserId),
                 Content = request.Content,
                 LikeCounter = request.LikeCounter,
-                DislikeCunter = request.DislikeCunter
+                DislikeCunter = request.DislikeCunter,
+                Category = request.Category
             };
 
             if (post == null) return null;

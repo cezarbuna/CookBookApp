@@ -17,5 +17,11 @@ namespace CookBook.Domain.Models
 
         public int LikeCounter { get; set; } = 0;
         public int DislikeCunter { get; set; } = 0;
+
+        public int Category { get; set; } = 1;
+        
+        //Category property has : value 0 for breakfast
+        //                        value 1 for lunch (default)
+        //                        value 2 for dinner
     }
 }

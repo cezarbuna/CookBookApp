@@ -46,7 +46,8 @@ namespace CookBook.Controllers
                 UserId = newPost.UserId,
                 Content = newPost.Content,
                 LikeCounter = newPost.LikeCounter,
-                DislikeCunter = newPost.DislikeCunter
+                DislikeCunter = newPost.DislikeCunter,
+                Category = newPost.Category
             };
 
             var post = _mapper.Map<PostPutPostDto, Post>(newPost);
@@ -85,7 +86,7 @@ namespace CookBook.Controllers
         }
 
         [HttpDelete]
-        [Route("id")]
+        [Route("{id}")]
         public async Task<IActionResult> DeletePost(Guid id)
         {
             var command = new DeletePost { PostId = id };

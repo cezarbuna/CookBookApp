@@ -12,5 +12,6 @@ namespace CookBook.Dtos.PostDtos
 
         public int LikeCounter { get; set; } = 0;
         public int DislikeCunter { get; set; } = 0;
+        public int Category { get; set; } = 1;
     }
 }
