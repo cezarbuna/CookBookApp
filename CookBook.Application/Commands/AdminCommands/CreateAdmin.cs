@@ -1,15 +1,15 @@
-﻿using System;
+﻿using CookBook.Domain.Models;
+using MediatR;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CookBook.Domain.Models
+namespace CookBook.Application.Commands.AdminCommands
 {
-    public class Admin : BaseEntity
+    public class CreateAdmin : IRequest<Admin>
     {
-        public Guid AdminId { get; set; } = Guid.NewGuid();
         public string UserName { get; set; }
         public string Password { get; set; }
     }
