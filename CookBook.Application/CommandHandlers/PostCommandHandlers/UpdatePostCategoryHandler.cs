@@ -23,12 +23,19 @@ namespace CookBook.Application.CommandHandlers.PostCommandHandlers
         {
             var post = repository.GetEntityByID(request.PostId);
 
-            post.Category = request.NewCategory;
+            if(post.UserId == request.UserId)
+            {
+                post.Category = request.NewCategory;
 
-            repository.Update(post);
-            repository.SaveChanges();
+                repository.Update(post);
+                repository.SaveChanges();
 
-            return Task.FromResult(post);
+                return Task.FromResult(post);
+            }
+            else
+            {
+                return null;
+            }          
         }
     }
 }

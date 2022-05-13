@@ -68,12 +68,13 @@ namespace CookBook.Controllers
         }
 
         [HttpPatch]
-        [Route("{id}/update-post-content/{newPostContent}")]
-        public async Task<IActionResult> UpdatePostContent(Guid id, string newPostContent)
+        [Route("{id}/{userId}/update-post-content/{newPostContent}")]
+        public async Task<IActionResult> UpdatePostContent(Guid id, Guid userId, string newPostContent)
         {
             var command = new UpdatePostContent
             {
                 PostId = id,
+                UserId = userId,
                 NewPostContent = newPostContent
             };
 
@@ -86,12 +87,13 @@ namespace CookBook.Controllers
         }
 
         [HttpPatch]
-        [Route("{id}/update-post-category/{newPostCategory}")]
-        public async Task<IActionResult> UpdatePostCategory(Guid id, int newPostCategory)
+        [Route("{id}/{userId}/update-post-category/{newPostCategory}")]
+        public async Task<IActionResult> UpdatePostCategory(Guid id, Guid userId, int newPostCategory)
         {
             var command = new UpdatePostCategory
             {
                 PostId = id,
+                UserId=userId,
                 NewCategory = newPostCategory
             };
 
