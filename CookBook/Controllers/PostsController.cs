@@ -66,6 +66,24 @@ namespace CookBook.Controllers
             return CreatedAtAction(nameof(GetPostById), new { id = post.Id }, createdPost);
         }
 
+        [HttpPatch]
+        [Route("{id}/update-post-content/{newPostContent}")]
+        public async Task<IActionResult> UpdatePostContent(Guid id, string newPostContent)
+        {
+            var command = new UpdatePostContent
+            {
+                PostId = id,
+                NewPostContent = newPostContent
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
         [HttpDelete]
         [Route("id")]
         public async Task<IActionResult> DeletePost(Guid id)
