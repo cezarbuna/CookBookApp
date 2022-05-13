@@ -10,6 +10,7 @@ namespace CookBook.Dtos.PostDtos
 
         public string Content { get; set; }
 
-        public int Liked { get; set; }
+        public int LikeCounter { get; set; } = 0;
+        public int DislikeCunter { get; set; } = 0;
     }
 }

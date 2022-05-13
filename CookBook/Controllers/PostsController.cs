@@ -45,7 +45,8 @@ namespace CookBook.Controllers
             {
                 UserId = newPost.UserId,
                 Content = newPost.Content,
-                Liked = newPost.Liked
+                LikeCounter = newPost.LikeCounter,
+                DislikeCunter = newPost.DislikeCunter
             };
 
             var post = _mapper.Map<PostPutPostDto, Post>(newPost);
