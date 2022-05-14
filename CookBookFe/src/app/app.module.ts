@@ -13,6 +13,11 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {RouterModule} from "@angular/router";
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import {RouterModule} from "@angular/router";
     MatButtonModule,
     MatIconModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    MatCardModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
