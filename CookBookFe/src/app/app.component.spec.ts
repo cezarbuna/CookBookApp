@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'CookBookFe'`, () => {
+  it(`should have as title 'CookBookFE'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('CookBookFe');
+    expect(app.title).toEqual('CookBookFE');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('CookBookFe app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('CookBookFE app is running!');
   });
 });
