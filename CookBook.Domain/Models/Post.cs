@@ -13,6 +13,8 @@ namespace CookBook.Domain.Models
         public User User { get; set; }
         #endregion
 
+        public string Title { get; set; }
+
         public string Content { get; set; }
 
         public int LikeCounter { get; set; } = 0;
