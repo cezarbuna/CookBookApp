@@ -1,2 +1,19 @@
 
-<p>home works!</p>
+<div>
+  <mat-card *ngFor="let post of posts">
+    <mat-card-title>{{post.title}}</mat-card-title>
+    <mat-card-content>{{post.content}}</mat-card-content>
+    <mat-list>
+      Comments
+      <mat-list-item *ngFor="let comment of comments">
+        <div class="comment-block">
+          {{comment.content}}
+          <span>
+            <a mat-button><mat-icon >delete</mat-icon></a>
+          </span>
+        </div>
+      </mat-list-item>
+      <mat-list-item ></mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
