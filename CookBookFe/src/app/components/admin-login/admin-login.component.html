@@ -1,1 +1,30 @@
-<p>admin-login works!</p>
+<div class="login" fxLayoutAlign="center center" fxFlexFill >
+  <mat-card fxFlex="45" class="mat-elevation-z8">
+    <mat-toolbar color="primary">Login Page</mat-toolbar>
+    <mat-card-header>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle routerLink="/login">As User</mat-button-toggle>
+        <mat-button-toggle routerLink="/admin-login">As admin</mat-button-toggle>
+      </mat-button-toggle-group>
+    </mat-card-header>
+    <form [formGroup]="loginForm" class="login-form" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="login()">
+      <mat-form-field>
+        <input matInput placeholder="Admin ID" required name="adminId" formControlName="adminId">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Username" required name="username" formControlName="username">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" required name="password" formControlName="password">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary">Login</button>
+    </form>
+    <a routerLink="/register">Don't have an account? Click to register!</a>
+  </mat-card>
+</div>
+

@@ -3,13 +3,13 @@
     <mat-toolbar color="primary">Login Page</mat-toolbar>
     <mat-card-header>
       <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle routerLink="/admin-login">As User</mat-button-toggle>
-        <mat-button-toggle routerLink="/admin-register">As admin</mat-button-toggle>
+        <mat-button-toggle routerLink="/login">As User</mat-button-toggle>
+        <mat-button-toggle routerLink="/admin-login">As admin</mat-button-toggle>
       </mat-button-toggle-group>
     </mat-card-header>
     <form [formGroup]="loginForm" class="login-form" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="login()">
       <mat-form-field>
-        <input matInput placeholder="Email" required name="email" formControlName="username">
+        <input matInput placeholder="Username" required name="username" formControlName="username">
         <mat-icon matSuffix>mail</mat-icon>
       </mat-form-field>
 
