@@ -9,33 +9,20 @@
     </mat-card-header>
     <form [formGroup]="registerForm" (ngSubmit)="register()" class="register-form" fxLayoutAlign="stretch" fxLayout="column">
       <mat-form-field>
-        <input matInput formControlName="username" placeholder="Username" required minlength="8" maxlength="30">
+        <input matInput formControlName="adminId" placeholder="Admin ID" required minlength="8" maxlength="30">
         <mat-icon matSuffix>mail</mat-icon>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput type="password" placeholder="Password" formControlName="password" required minlength="8" maxlength="30">
+        <input matInput placeholder="Username" formControlName="userName" required minlength="8" maxlength="30">
         <mat-icon matSuffix>lock</mat-icon>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput placeholder="Email" formControlName="email">
+        <input matInput placeholder="Password" formControlName="password" type="password">
         <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
 
-      <mat-form-field>
-        <input matInput type="password" formControlName="phoneNumber" placeholder="Phone Number" maxlength="30">
-        <mat-icon matSuffix>lock</mat-icon>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput type="password" placeholder="Current occupation" maxlength="30" formControlName="currentOccupation">
-        <mat-icon matSuffix>lock</mat-icon>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput type="password" placeholder="Description of yourself" maxlength="30" formControlName="description">
-        <mat-icon matSuffix>lock</mat-icon>
-      </mat-form-field>
       <button mat-raised-button type="submit" color="primary">Create Account</button>
     </form>
     <a routerLink="/login">Already have an account? Click here to login!</a>

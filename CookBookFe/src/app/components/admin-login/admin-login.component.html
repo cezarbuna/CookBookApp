@@ -9,8 +9,13 @@
     </mat-card-header>
     <form [formGroup]="loginForm" class="login-form" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="login()">
       <mat-form-field>
+        <input matInput placeholder="Admin ID" required name="adminId" formControlName="adminId">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
         <input matInput placeholder="Username" required name="username" formControlName="username">
-        <mat-icon matSuffix>mail</mat-icon>
+        <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
 
       <mat-form-field>
@@ -22,3 +27,4 @@
     <a routerLink="/register">Don't have an account? Click to register!</a>
   </mat-card>
 </div>
+

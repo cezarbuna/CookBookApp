@@ -23,6 +23,9 @@ import {MatListModule} from "@angular/material/list";
 import {PostsService} from "./services/posts.service";
 import {UsersService} from "./services/users.service";
 import {CommentsService} from "./services/comments.service";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -31,25 +34,28 @@ import {CommentsService} from "./services/comments.service";
     HomeComponent,
     AboutUsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AdminRegisterComponent,
+    AdminLoginComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    AppRoutingModule,
-    RouterModule,
-    MatCardModule,
-    MatFormFieldModule,
-    FormsModule,
-    MatInputModule,
-    FlexLayoutModule,
-    HttpClientModule,
-    MatListModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        AppRoutingModule,
+        RouterModule,
+        MatCardModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatInputModule,
+        FlexLayoutModule,
+        HttpClientModule,
+        MatListModule,
+        ReactiveFormsModule,
+        MatButtonToggleModule
+    ],
   providers: [PostsService, UsersService, CommentsService],
   bootstrap: [AppComponent]
 })
