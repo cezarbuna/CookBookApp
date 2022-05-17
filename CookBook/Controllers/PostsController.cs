@@ -93,6 +93,7 @@ namespace CookBook.Controllers
             var command = new CreatePost
             {
                 UserId = newPost.UserId,
+                Title = newPost.Title,
                 Content = newPost.Content,
                 LikeCounter = newPost.LikeCounter,
                 DislikeCunter = newPost.DislikeCunter,
@@ -125,6 +126,35 @@ namespace CookBook.Controllers
                 PostId = id,
                 UserId = userId,
                 NewPostContent = newPostContent
+            };
+
+            Post result = null;
+
+            try
+            {
+                result = await _mediator.Send(command);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return NotFound();
+            }
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
+        [Route("{id}/{userId}/update-post-title/{newPostTitle}")]
+        public async Task<IActionResult> UpdatePostTitle(Guid id, Guid userId, string newPostTitle)
+        {
+            var command = new UpdatePostTitle
+            {
+                PostId = id,
+                UserId = userId,
+                NewTitle = newPostTitle
             };
 
             Post result = null;

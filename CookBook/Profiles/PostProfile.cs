@@ -13,6 +13,7 @@ namespace CookBook.Profiles
                 .ForMember(d => d.Id, opt => opt.MapFrom(p => p.Id))
                 .ForMember(d => d.UserId, opt => opt.MapFrom(p => p.UserId))
                 .ForMember(d => d.User, opt => opt.MapFrom(p => p.User))
+                .ForMember(d => d.Title, opt => opt.MapFrom(p => p.Title))
                 .ForMember(d => d.Content, opt => opt.MapFrom(p => p.Content))
                 .ForMember(d => d.LikeCounter, opt => opt.MapFrom(p => p.LikeCounter))
                 .ForMember(d => d.DislikeCunter, opt => opt.MapFrom(p => p.DislikeCunter))
@@ -22,6 +23,7 @@ namespace CookBook.Profiles
             //Mapping post PUT POST PATCH
             CreateMap<PostPutPostDto, Post>()
                 .ForMember(d => d.UserId, opt => opt.MapFrom(p => p.UserId))
+                .ForMember(d => d.Title, opt => opt.MapFrom(p => p.Title))
                 .ForMember(d => d.Content, opt => opt.MapFrom(p => p.Content))
                 .ForMember(d => d.LikeCounter, opt => opt.MapFrom(p => p.LikeCounter))
                 .ForMember(d => d.DislikeCunter, opt => opt.MapFrom(p => p.DislikeCunter))

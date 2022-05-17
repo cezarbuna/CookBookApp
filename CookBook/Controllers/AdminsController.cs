@@ -35,6 +35,15 @@ namespace CookBook.Controllers
             return Ok(foundUser);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllAdmins()
+        {
+            var admins = await _mediator.Send(new GetAllAdmins());
+
+            var foundAdmins = _mapper.Map<List<AdminGetDto>>(admins);
+            return Ok(foundAdmins);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateAdmin(AdminPutPostDto newAdmin)
         {

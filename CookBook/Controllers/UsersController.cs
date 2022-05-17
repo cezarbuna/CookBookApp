@@ -36,6 +36,15 @@ namespace CookBook.Controllers
             return Ok(foundUser);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _mediator.Send(new GetAllUsers());
+
+            var foundUsers = _mapper.Map<List<UserGetDto>>(users);
+            return Ok(foundUsers);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateUser(UserPutPostDto newUser)
         {

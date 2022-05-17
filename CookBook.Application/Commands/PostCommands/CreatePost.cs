@@ -12,6 +12,8 @@ namespace CookBook.Application.Commands.PostCommands
     {
         public Guid UserId { get; set; }
 
+        public string Title { get; set; }
+
         public string Content { get; set; }
 
         public int LikeCounter { get; set; } = 0;

@@ -83,6 +83,10 @@ namespace CookBook.Dal.Migrations
                     b.Property<int>("LikeCounter")
                         .HasColumnType("int");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 

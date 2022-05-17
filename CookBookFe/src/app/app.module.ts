@@ -15,9 +15,14 @@ import { RegisterComponent } from './components/register/register.component';
 import {RouterModule} from "@angular/router";
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {HttpClientModule} from "@angular/common/http";
+import {MatListModule} from "@angular/material/list";
+import {PostsService} from "./services/posts.service";
+import {UsersService} from "./services/users.service";
+import {CommentsService} from "./services/comments.service";
 
 @NgModule({
   declarations: [
@@ -40,9 +45,12 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule,
+    MatListModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PostsService, UsersService, CommentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
