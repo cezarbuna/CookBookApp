@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {UserInterface} from "../../models/user-interface";
+import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
+import {UsersService} from "../../services/users.service";
 
 @Component({
   selector: 'app-register',
@@ -8,22 +12,37 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class RegisterComponent implements OnInit {
 
-  register = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-    email: new FormControl(''),
-    phoneNumber : new FormControl(''),
-    currentOccupation: new FormControl(''),
-    description: new FormControl('')
-  })
+  registerForm!: FormGroup;
 
-  constructor() { }
+  users: UserInterface[] = [];
+
+  constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router, private userService: UsersService) { }
 
   ngOnInit(): void {
+    this.userService.getUsers().subscribe(res => {
+      this.users = res;
+      console.log(res);
+    })
+
+    this.registerForm = this.formBuilder.group({
+      username: [''],
+      password: [''],
+      email: [''],
+      phoneNumber: [''],
+      currentOccupation: [''],
+      description: ['']
+    })
+
   }
 
-  collection() {
-    console.warn(this.register.value);
+  register() {
+    this.userService.postUser(this.registerForm.value)
+      .subscribe(res => {
+        console.log(res);
+        this.router.navigate(['/home']);
+      })
+
+
   }
 
 }
