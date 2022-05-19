@@ -16,6 +16,8 @@ export class AdminLoginComponent implements OnInit {
 
   admins: AdminInterface[] = [];
 
+  invalidLogin!: boolean;
+
   constructor(private router: Router, private adminService: AdminService, private httpClient: HttpClient, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -52,6 +54,26 @@ export class AdminLoginComponent implements OnInit {
       alert("Something went wrong!");
     })
 
+  }
+
+  login2(form: FormGroup) {
+    const credentials = {
+      'adminId': form.value.adminId,
+
+      'username': form.value.username,
+
+      'password': form.value.password
+    }
+
+    this.httpClient.post("https://localhost:7025/api/auth/login-admin/", credentials)
+      .subscribe( res => {
+        const token = (<any>res).token;
+        localStorage.setItem("jwt", token);
+        this.invalidLogin = false;
+        this.router.navigate(["/home"]);
+      }, err => {
+        this.invalidLogin = true;
+      })
   }
 
 }

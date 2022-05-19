@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CookBook.Application.Commands.UserCommands;
+using CookBook.Application.Queries.AdminQueries;
 using CookBook.Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace CookBook.Controllers
         }
 
         [HttpPost, Route("login")]
-        public async Task<IActionResult> Login([FromBody] User inputUser)
+        public async Task<IActionResult> LoginUser([FromBody] User inputUser)
         {
             //if (user == null)
             //    return BadRequest("Invalid client request!");
@@ -57,6 +58,39 @@ namespace CookBook.Controllers
             var user = await _mediator.Send(query);
 
             if(user == null)
+                return NotFound();
+            else
+            {
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+                var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+
+                var tokenOptions = new JwtSecurityToken(
+                    issuer: "http://localhost:4200/",
+                    audience: "http://localhost:4200/",
+                    claims: new List<Claim>(),
+                    expires: DateTime.Now.AddMinutes(10),
+                    signingCredentials: signingCredentials
+                    );
+
+                var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+                return Ok(new { Token = tokenString });
+            }
+
+        }
+
+        [HttpPost, Route("login-admin")]
+        public async Task<IActionResult> LoginAdmin([FromBody] Admin inputAdmin)
+        {
+            var query = new LoginAdmin
+            {
+                UserName = inputAdmin.UserName,
+                Password = inputAdmin.Password,
+                AdminId = inputAdmin.AdminId
+            };
+
+            var admin = await _mediator.Send(query);
+
+            if (admin == null)
                 return NotFound();
             else
             {
