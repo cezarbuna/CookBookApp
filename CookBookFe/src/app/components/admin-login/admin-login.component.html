@@ -7,7 +7,7 @@
         <mat-button-toggle routerLink="/admin-login">As admin</mat-button-toggle>
       </mat-button-toggle-group>
     </mat-card-header>
-    <form [formGroup]="loginForm" class="login-form" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="login()">
+    <form [formGroup]="loginForm" class="login-form" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="login2(loginForm)">
       <mat-form-field>
         <input matInput placeholder="Admin ID" required name="adminId" formControlName="adminId">
         <mat-icon matSuffix>lock</mat-icon>

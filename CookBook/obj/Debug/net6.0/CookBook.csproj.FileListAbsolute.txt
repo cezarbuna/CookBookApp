@@ -71,3 +71,4 @@ C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Application.pdb
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Dal.pdb
 C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\CookBook.Domain.pdb
+C:\Users\cezar.buna\Desktop\SEF\CookBookApp\CookBookApp\CookBook\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

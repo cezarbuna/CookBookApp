@@ -5,6 +5,7 @@ using CookBook.Application.Queries.UserQueries;
 using CookBook.Domain.Models;
 using CookBook.Dtos.UserDtos;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CookBook.Controllers

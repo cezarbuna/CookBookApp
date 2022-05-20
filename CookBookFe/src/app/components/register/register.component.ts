@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
     this.userService.postUser(this.registerForm.value)
       .subscribe(res => {
         console.log(res);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/login']);
       })
 
 
