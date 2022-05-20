@@ -27,6 +27,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import {JwtModule} from "@auth0/angular-jwt";
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -41,7 +43,9 @@ export function tokenGetter() {
     LoginComponent,
     RegisterComponent,
     AdminRegisterComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    UserProfileComponent,
+    AdminProfileComponent
   ],
     imports: [
         BrowserModule,

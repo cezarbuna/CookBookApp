@@ -25,29 +25,8 @@ namespace CookBook.Controllers
         }
 
         [HttpPost, Route("login")]
-        public async Task<IActionResult> LoginUser([FromBody] User inputUser)
+        public async Task<IActionResult> LoginUser([FromBody] LoginModel inputUser)
         {
-            //if (user == null)
-            //    return BadRequest("Invalid client request!");
-
-            //if (user.UserName == "username1" && user.Password == "password1")
-            //{
-            //    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
-            //    var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-
-            //    var tokenOptions = new JwtSecurityToken(
-            //        issuer: "http://localhost:4200/",
-            //        audience: "http://localhost:4200/",
-            //        claims: new List<Claim>(),
-            //        expires: DateTime.Now.AddMinutes(10),
-            //        signingCredentials: signingCredentials
-            //        );
-
-            //    var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-            //    return Ok(new { Token = tokenString });
-            //}
-
-            //return Unauthorized();
 
             var query = new LoginUser
             {
@@ -55,16 +34,17 @@ namespace CookBook.Controllers
                 Password = inputUser.Password
             };
 
-            var user = await _mediator.Send(query);
+            var isLoggedIn = await _mediator.Send(query);
 
-            if(user == null)
+            if (!isLoggedIn)
                 return NotFound();
             else
             {
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@346"));
                 var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
                 var tokenOptions = new JwtSecurityToken(
+
                     issuer: "http://localhost:4200/",
                     audience: "http://localhost:4200/",
                     claims: new List<Claim>(),
@@ -79,22 +59,23 @@ namespace CookBook.Controllers
         }
 
         [HttpPost, Route("login-admin")]
-        public async Task<IActionResult> LoginAdmin([FromBody] Admin inputAdmin)
+        public async Task<IActionResult> LoginAdmin([FromBody] AdminLoginModel inputAdmin)
         {
+
             var query = new LoginAdmin
             {
+                AdminId = inputAdmin.AdminId,
                 UserName = inputAdmin.UserName,
-                Password = inputAdmin.Password,
-                AdminId = inputAdmin.AdminId
+                Password = inputAdmin.Password
             };
 
-            var admin = await _mediator.Send(query);
+            var isLoggedIn = await _mediator.Send(query);
 
-            if (admin == null)
+            if (!isLoggedIn)
                 return NotFound();
             else
             {
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@346"));
                 var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
 
                 var tokenOptions = new JwtSecurityToken(
@@ -110,5 +91,38 @@ namespace CookBook.Controllers
             }
 
         }
+
+        //[HttpPost, Route("login-admin")]
+        //public async Task<IActionResult> LoginAdmin([FromBody] Admin inputAdmin)
+        //{
+        //    var query = new LoginAdmin
+        //    {
+        //        UserName = inputAdmin.UserName,
+        //        Password = inputAdmin.Password,
+        //        AdminId = inputAdmin.AdminId
+        //    };
+
+        //    var admin = await _mediator.Send(query);
+
+        //    if (admin == null)
+        //        return NotFound();
+        //    else
+        //    {
+        //        var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+        //        var signingCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+
+        //        var tokenOptions = new JwtSecurityToken(
+        //            issuer: "http://localhost:4200/",
+        //            audience: "http://localhost:4200/",
+        //            claims: new List<Claim>(),
+        //            expires: DateTime.Now.AddMinutes(10),
+        //            signingCredentials: signingCredentials
+        //            );
+
+        //        var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+        //        return Ok(new { Token = tokenString });
+        //    }
+
+        //}
     }
 }

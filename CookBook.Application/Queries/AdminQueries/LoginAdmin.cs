@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CookBook.Application.Queries.AdminQueries
 {
-    public class LoginAdmin : IRequest<Admin>
+    public class LoginAdmin : IRequest<bool>
     {
         public Guid AdminId { get; set; }
         public string UserName { get; set; }

@@ -1,0 +1,44 @@
+<div class="register" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="45" class="mat-elevation-z8">
+    <mat-toolbar color="primary">Register Page</mat-toolbar>
+    <mat-card-header>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle routerLink="/register">As User</mat-button-toggle>
+        <mat-button-toggle routerLink="/admin-register">As admin</mat-button-toggle>
+      </mat-button-toggle-group>
+    </mat-card-header>
+    <form class="register-form" fxLayoutAlign="stretch" fxLayout="column">
+      <mat-form-field>
+        <input matInput formControlName="username" placeholder="Username" required minlength="8" maxlength="30">
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" formControlName="password" required minlength="8" maxlength="30">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" formControlName="phoneNumber" placeholder="Phone Number" maxlength="30">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Current occupation" maxlength="30" formControlName="currentOccupation">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Description of yourself" maxlength="30" formControlName="description">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary">Create Account</button>
+    </form>
+    <a routerLink="/login">Already have an account? Click here to login!</a>
+  </mat-card>
+</div>
+

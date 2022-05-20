@@ -69,6 +69,7 @@ export class LoginComponent implements OnInit {
         this.invalidLogin = false;
         this.router.navigate(["/home"]);
       }, err => {
+        console.log("Invalid credentials!");
         this.invalidLogin = true;
       })
   }

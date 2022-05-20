@@ -1,6 +1,5 @@
-﻿using CookBook.Application.Queries.AdminQueries;
+﻿using CookBook.Application.Commands.AdminCommands;
 using CookBook.Domain.IRepositories;
-using CookBook.Domain.Models;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CookBook.Application.QueryHandlers.AdminQueryHandlers
+namespace CookBook.Application.CommandHandlers.AdminCommandHandlers
 {
     public class LoginAdminHandler : IRequestHandler<LoginAdmin, bool>
     {

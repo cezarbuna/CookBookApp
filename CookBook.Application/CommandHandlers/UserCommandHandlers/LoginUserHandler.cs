@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CookBook.Application.CommandHandlers.UserCommandHandlers
 {
-    public class LoginUserHandler : IRequestHandler<LoginUser, User>
+    public class LoginUserHandler : IRequestHandler<LoginUser, bool>
     {
         private readonly IUserRepository repository;
 
@@ -19,14 +19,11 @@ namespace CookBook.Application.CommandHandlers.UserCommandHandlers
             this.repository = repository;
         }
 
-        public Task<User> Handle(LoginUser request, CancellationToken cancellationToken)
+        public Task<bool> Handle(LoginUser request, CancellationToken cancellationToken)
         {
-            var user = repository.GetEntityBy(x => x.UserName == request.UserName && x.Password == request.Password);
+            var isInRepository = repository.Any(x => x.UserName == request.UserName && x.Password == request.Password);
 
-            if (user == null)
-                return null;
-
-            return Task.FromResult(user);
+            return Task.FromResult(isInRepository);
         }
     }
 }
