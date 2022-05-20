@@ -25,9 +25,9 @@ export class UsersService {
       }))
   }
 
-  updateUser(data: any, id: string) {
-    return this.httpClient.patch<any>("https://localhost:7025/api/Users/" + id, data)
-      .pipe(map((res: any) => {
+  updateUser(data: UserInterface, id: string) {
+    return this.httpClient.patch<UserInterface>("https://localhost:7025/api/Users/" + id, data)
+      .pipe(map((res: UserInterface) => {
         return res;
       }))
   }
