@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
 
   invalidLogin!: boolean;
 
+  userId!: string;
+
   constructor(private router: Router, private usersService: UsersService, private httpClient: HttpClient, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -66,6 +68,13 @@ export class LoginComponent implements OnInit {
       .subscribe( res => {
         const token = (<any>res).token;
         localStorage.setItem("jwt", token);
+
+        this.usersService.getUserIdByUsername(credentials.username).subscribe(res => {
+          this.userId = res;
+          console.log(res);
+          localStorage.setItem("userId", this.userId);
+        })
+
         this.invalidLogin = false;
         this.router.navigate(["/home"]);
       }, err => {

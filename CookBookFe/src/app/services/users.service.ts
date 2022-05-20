@@ -38,4 +38,18 @@ export class UsersService {
         return res;
       }))
   }
+
+  getUserById(id: string) {
+    return this.httpClient.get<UserInterface>("https://localhost:7025/api/Users/get-user-by-id/" + id)
+      .pipe(map((res: UserInterface) => {
+        return res;
+      }))
+  }
+
+  getUserIdByUsername(username: string){
+    return this.httpClient.get<UserInterface[]>("https://localhost:7025/api/Users/get-user-id-by-username/" + username)
+      .pipe(map((res: any) => {
+        return res;
+      }))
+  }
 }
