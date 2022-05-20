@@ -46,6 +46,23 @@ namespace CookBook.Controllers
             return Ok(foundUsers);
         }
 
+        [HttpGet]
+        [Route("get-user-id-by-username/{userName}")]
+        public async Task<IActionResult> GetUserIdByEmail(string userName)
+        {
+            var query = new GetUserIdByUsername
+            {
+                UserName = userName
+            };
+
+            var id = await _mediator.Send(query);
+
+            if (id == Guid.Empty)
+                return NoContent();
+
+            return Ok(id);
+        }
+
         [HttpPatch]
         [Route("{id}")]
         public async Task<IActionResult> UpdateUser(Guid id, [FromBody] UserPutPostDto updatedUser)
