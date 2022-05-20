@@ -46,6 +46,29 @@ namespace CookBook.Controllers
             return Ok(foundUsers);
         }
 
+        [HttpPatch]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateUser(Guid id, [FromBody] UserPutPostDto updatedUser)
+        {
+            var command = new UpdateUser
+            {
+                UserId = id,
+                UserName = updatedUser.UserName,
+                Password = updatedUser.Password,
+                Email = updatedUser.Email,
+                PhoneNumber = updatedUser.PhoneNumber,
+                CurrentOccupation = updatedUser.CurrentOccupation,
+                Description = updatedUser.Description
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateUser(UserPutPostDto newUser)
         {
