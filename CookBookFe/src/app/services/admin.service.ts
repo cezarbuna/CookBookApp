@@ -26,9 +26,23 @@ export class AdminService {
       }))
   }
 
-  updateAdmin(data: any, id: string) {
-    return this.httpClient.patch<any>("https://localhost:7025/api/Admins/" + id, data)
-      .pipe(map((res: any) => {
+  updateAdmin(data: AdminInterface, id: string) {
+    return this.httpClient.patch<AdminInterface>("https://localhost:7025/api/Admins/" + id, data)
+      .pipe(map((res: AdminInterface) => {
+        return res;
+      }))
+  }
+
+  getAdminIdByUserId(userId: string) {
+    return this.httpClient.get<AdminInterface>("https://localhost:7025/api/Admins/get-admin-id-by-normal-id/" + userId)
+      .pipe(map((res:any) => {
+        return res;
+      }))
+  }
+
+  getAdminById(adminId: string) {
+    return this.httpClient.get<AdminInterface>("https://localhost:7025/api/Admins/get-admin-by-id/" + adminId)
+      .pipe(map((res:AdminInterface) => {
         return res;
       }))
   }

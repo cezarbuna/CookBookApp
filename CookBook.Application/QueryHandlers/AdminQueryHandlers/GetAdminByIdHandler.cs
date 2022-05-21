@@ -21,7 +21,7 @@ namespace CookBook.Application.QueryHandlers.AdminQueryHandlers
 
         public Task<Admin> Handle(GetAdminById request, CancellationToken cancellationToken)
         {
-            var admin = repository.GetEntityByID(request.AdminId);
+            var admin = repository.GetEntityBy(x => x.AdminId == request.AdminId);
 
             return Task.FromResult(admin);
         }

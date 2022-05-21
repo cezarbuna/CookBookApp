@@ -9,28 +9,50 @@ import {JwtHelperService} from "@auth0/angular-jwt";
 })
 export class NavbarComponent implements OnInit {
 
-  isLoggedIn!: boolean;
+  isLoggedInAsUser: boolean = false;
+  isLoggedInAsAdmin: boolean = false;
+  isNotLoggedIn: boolean = false;
 
   constructor(private router: Router, private jwtHelper: JwtHelperService) { }
 
   ngOnInit(): void {
     const token = localStorage.getItem("jwt");
-    this.isLoggedIn = !!(token && !this.jwtHelper.isTokenExpired(token));
+    const userId = localStorage.getItem("userId");
+    const adminId = localStorage.getItem("adminId");
+
+    if(userId && !this.jwtHelper.isTokenExpired(token!)){
+      this.isLoggedInAsUser = true;
+    } else if(adminId && !this.jwtHelper.isTokenExpired(token!)){
+      this.isLoggedInAsAdmin = true;
+    }else{
+      this.isNotLoggedIn = true;
+    }
+
+    //this.isLoggedIn = !!(token && !this.jwtHelper.isTokenExpired(token));
   }
 
   logOut() {
     localStorage.removeItem("jwt");
-    localStorage.removeItem("userId");
+
+    if(localStorage.getItem("userId"))
+      localStorage.removeItem("userId");
+    if(localStorage.getItem("adminId"))
+      localStorage.removeItem("adminId");
+
     this.router.navigate(["/home"]);
   }
 
-  isUserLoggedIn(): boolean {
-    if(this.isLoggedIn){
-      console.log("User is logged in");
-    }else{
-      console.log("User is not logged in");
-    }
-    return this.isLoggedIn;
+  isLoggedInAsUserChecker() : boolean {
+    return this.isLoggedInAsUser;
+
+  }
+  isLoggedInAsAdminChecker(): boolean {
+    return this.isLoggedInAsAdmin;
+
+  }
+
+  isLoggedOutChecker(): boolean{
+    return this.isNotLoggedIn;
   }
 
 }

@@ -91,7 +91,7 @@ namespace CookBook.Controllers
         }
 
         [HttpPatch]
-        [Route("adminId")]
+        [Route("{adminId}")]
         public async Task<IActionResult> UpdateAdmin(Guid adminId, [FromBody] AdminPutPostDto updatedAdmin)
         {
             var command = new UpdateAdmin
