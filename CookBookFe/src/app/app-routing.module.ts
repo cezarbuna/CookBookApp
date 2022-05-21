@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'admin-profile', component: AdminProfileComponent},
   { path: 'create-post', component: CreatePostComponent},
   { path: 'owned-posts', component: OwnedPostsComponent},
-  { path: 'edit-post', component: EditPostComponent}
+  { path: 'edit-post/:id', component: EditPostComponent}
 ];
 
 @NgModule({

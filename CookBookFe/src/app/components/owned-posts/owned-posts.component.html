@@ -1,1 +1,11 @@
-<p>owned-posts works!</p>
+<div *ngFor="let post of ownedPosts" class="owned-posts" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="45" class="mat-elevation-z8">
+    <mat-toolbar color="primary">{{post.title}}</mat-toolbar>
+    <mat-card-content>{{post.content}}</mat-card-content>
+    <a (click)="goToEdit(post.id)" mat-raised-button color="primary">
+      Edit
+      <mat-icon>edit</mat-icon>
+    </a>
+  </mat-card>
+</div>
+

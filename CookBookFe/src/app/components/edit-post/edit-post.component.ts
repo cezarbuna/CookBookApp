@@ -13,7 +13,7 @@ export class EditPostComponent implements OnInit {
   constructor(private postService: PostsService, private router: Router, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    
+
   }
 
 }
