@@ -1,0 +1,38 @@
+<div class="profile" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="45" class="mat-elevation-z8">
+    <mat-toolbar color="primary">Edit Your Profile</mat-toolbar>
+
+    <form class="profile-form" fxLayoutAlign="stretch" fxLayout="column">
+      <mat-form-field>
+        <input matInput formControlName="userName" placeholder="Username" required minlength="8" maxlength="30">
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" formControlName="password" required minlength="8" maxlength="30">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="phoneNumber" placeholder="Phone Number" maxlength="30">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Current occupation" maxlength="30" formControlName="currentOccupation">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description of yourself" maxlength="30" formControlName="description">
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary">Save changes!</button>
+    </form>
+  </mat-card>
+</div>
+
