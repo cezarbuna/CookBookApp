@@ -89,5 +89,24 @@ namespace CookBook.Controllers
 
             return CreatedAtAction(nameof(GetAdminById), new { id = admin.Id }, createdAdmin);
         }
+
+        [HttpPatch]
+        [Route("adminId")]
+        public async Task<IActionResult> UpdateAdmin(Guid adminId, [FromBody] AdminPutPostDto updatedAdmin)
+        {
+            var command = new UpdateAdmin
+            {
+                AdminId = adminId,
+                UserName = updatedAdmin.UserName,
+                Password = updatedAdmin.Password
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
     }
 }
