@@ -25,9 +25,9 @@ export class UsersService {
       }))
   }
 
-  updateUser(data: any, id: string) {
-    return this.httpClient.patch<any>("https://localhost:7025/api/Users/" + id, data)
-      .pipe(map((res: any) => {
+  updateUser(data: UserInterface, id: string) {
+    return this.httpClient.patch<UserInterface>("https://localhost:7025/api/Users/" + id, data)
+      .pipe(map((res: UserInterface) => {
         return res;
       }))
   }
@@ -35,6 +35,20 @@ export class UsersService {
   getUsers() {
     return this.httpClient.get<UserInterface[]>("https://localhost:7025/api/Users/")
       .pipe(map((res: UserInterface[]) => {
+        return res;
+      }))
+  }
+
+  getUserById(id: string) {
+    return this.httpClient.get<UserInterface>("https://localhost:7025/api/Users/get-user-by-id/" + id)
+      .pipe(map((res: UserInterface) => {
+        return res;
+      }))
+  }
+
+  getUserIdByUsername(username: string){
+    return this.httpClient.get<UserInterface[]>("https://localhost:7025/api/Users/get-user-id-by-username/" + username)
+      .pipe(map((res: any) => {
         return res;
       }))
   }

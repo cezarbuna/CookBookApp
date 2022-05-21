@@ -36,6 +36,23 @@ namespace CookBook.Controllers
         }
 
         [HttpGet]
+        [Route("get-admin-id-by-normal-id/{normalId}")]
+        public async Task<IActionResult> GetAdminIdById(Guid normalId)
+        {
+            var query = new GetAdminIdById
+            {
+                NormalId = normalId
+            };
+
+            var adminId = await _mediator.Send(query);
+
+            if (adminId == Guid.Empty)
+                return NoContent();
+
+            return Ok(adminId);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetAllAdmins()
         {
             var admins = await _mediator.Send(new GetAllAdmins());
@@ -71,6 +88,25 @@ namespace CookBook.Controllers
             }
 
             return CreatedAtAction(nameof(GetAdminById), new { id = admin.Id }, createdAdmin);
+        }
+
+        [HttpPatch]
+        [Route("{adminId}")]
+        public async Task<IActionResult> UpdateAdmin(Guid adminId, [FromBody] AdminPutPostDto updatedAdmin)
+        {
+            var command = new UpdateAdmin
+            {
+                AdminId = adminId,
+                UserName = updatedAdmin.UserName,
+                Password = updatedAdmin.Password
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
         }
     }
 }

@@ -1,1 +1,19 @@
-<p>admin-profile works!</p>
+<div class="profile" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="45" class="mat-elevation-z8">
+    <mat-toolbar color="primary">Edit Your Profile</mat-toolbar>
+
+    <form [formGroup]="editProfileForm" (ngSubmit)="updateAdmin()" class="profile-form" fxLayoutAlign="stretch" fxLayout="column">
+      <mat-form-field>
+        <input matInput formControlName="userName" placeholder="Username" required minlength="8" maxlength="30">
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" formControlName="password" required minlength="8" maxlength="30">
+        <mat-icon matSuffix>lock</mat-icon>
+      </mat-form-field>
+
+      <button mat-raised-button type="submit" color="primary">Save changes!</button>
+    </form>
+  </mat-card>
+</div>

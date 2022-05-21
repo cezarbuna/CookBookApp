@@ -18,6 +18,8 @@ export class AdminLoginComponent implements OnInit {
 
   invalidLogin!: boolean;
 
+  adminId!: string;
+
   constructor(private router: Router, private adminService: AdminService, private httpClient: HttpClient, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -69,10 +71,20 @@ export class AdminLoginComponent implements OnInit {
       .subscribe( res => {
         const token = (<any>res).token;
         localStorage.setItem("jwt", token);
+        localStorage.setItem("adminId", credentials.adminId);
+
+        /*this.adminService.getAdminIdByUserId(credentials.adminId).subscribe(res => {
+          this.adminId = res;
+          console.log("Logged adminId from admin-login component: " + this.adminId);
+          localStorage.setItem("adminId", this.adminId);
+        })*/
+
         this.invalidLogin = false;
+        alert("Admin login successful!");
         this.router.navigate(["/home"]);
       }, err => {
-        console.log("Invalid credentials!");
+        alert("Invalid admin credentials!");
+        console.log("Invalid admin credentials!");
         this.invalidLogin = true;
       })
   }

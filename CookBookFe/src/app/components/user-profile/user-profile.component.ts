@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {UsersService} from "../../services/users.service";
+import {Router} from "@angular/router";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
+import {UserInterface} from "../../models/user-interface";
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +12,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  user!: UserInterface;
+
+  editProfileForm!: FormGroup;
+
+  constructor(private userService: UsersService, private router: Router, private formBuilder: FormBuilder, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
+
+    this.userService.getUserById(localStorage.getItem("userId")!).subscribe(res => {
+      this.user = res;
+      console.log("Logged from user profile component:");
+      console.log(res);
+    })
+
+    this.editProfileForm = this.formBuilder.group({
+      userName: [''],
+      password: [''],
+      email: [''],
+      phoneNumber: [''],
+      currentOccupation: [''],
+      description: ['']
+    })
+  }
+
+  updateUser() {
+    this.userService.updateUser(this.editProfileForm.value, this.user.id)
+      .subscribe(res => {
+        console.log(res);
+        this.editProfileForm.reset();
+        this.router.navigate(['/home']);
+      })
+    this.editProfileForm.reset();
+  }
+
+  getCurrentUserUsername(): string {
+    return this.user.userName;
   }
 
 }

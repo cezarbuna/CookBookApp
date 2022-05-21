@@ -38,7 +38,7 @@ export class AdminRegisterComponent implements OnInit {
     this.adminService.postAdmin(this.registerForm.value)
       .subscribe(res => {
         console.log(res);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/admin-login']);
       })
 
 
