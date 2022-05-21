@@ -15,6 +15,7 @@ export class CreatePostComponent implements OnInit {
   createForm!: FormGroup;
 
   userId!: string;
+  createdPostCategory: number = 1;
 
   constructor(private formBuilder: FormBuilder, private httpClient: HttpClient, private router: Router, private postService: PostsService) { }
 
@@ -26,7 +27,8 @@ export class CreatePostComponent implements OnInit {
     this.createForm = this.formBuilder.group({
       userId: [this.userId],
       title: [''],
-      content: ['']
+      content: [''],
+      category: [this.createdPostCategory]
     })
   }
 
@@ -36,6 +38,17 @@ export class CreatePostComponent implements OnInit {
         console.log(res);
         this.router.navigate(['/home']);
       })
+  }
+
+  /*setPostCategory(category: number) {
+    console.log("Post category method triggered!");
+    this.createdPostCategory = category;
+    console.log(this.createdPostCategory);
+  }*/
+
+  setPostCategory(category: number) {
+    console.log("Post category method 2 triggered!");
+    this.createForm.controls.category.setValue(category);
   }
 
 }
