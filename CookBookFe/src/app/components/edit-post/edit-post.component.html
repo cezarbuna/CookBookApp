@@ -1,0 +1,24 @@
+<div class="edit-post" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="45" class="mat-elevation-z8">
+    <mat-toolbar color="primary">Edit Your Post</mat-toolbar>
+
+    <form [formGroup]="editPostForm" (ngSubmit)="updatePost()" class="edit-profile-form" fxLayoutAlign="stretch" fxLayout="column">
+      <mat-form-field>
+        <input matInput formControlName="title" placeholder="Title" required>
+        <mat-icon matSuffix>menu_book</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Content" formControlName="content" required>
+        <mat-icon matSuffix>restaurant</mat-icon>
+      </mat-form-field>
+
+      <span><button mat-button (click)="setPostCategory(0)" type="button">Breakfast</button></span>
+      <span><button mat-button (click)="setPostCategory(1)" type="button">Lunch</button></span>
+      <span><button mat-button (click)="setPostCategory(2)" type="button">Dinner</button></span>
+
+      <button mat-raised-button type="submit" color="primary">Save changes!</button>
+    </form>
+  </mat-card>
+</div>
+

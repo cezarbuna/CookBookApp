@@ -48,7 +48,7 @@ namespace CookBook.Controllers
                     issuer: "http://localhost:4200/",
                     audience: "http://localhost:4200/",
                     claims: new List<Claim>(),
-                    expires: DateTime.Now.AddMinutes(10),
+                    expires: DateTime.Now.AddMinutes(30),
                     signingCredentials: signingCredentials
                     );
 
