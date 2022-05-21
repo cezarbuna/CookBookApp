@@ -2,14 +2,14 @@
   <mat-card fxFlex="45" class="mat-elevation-z8">
     <mat-toolbar color="primary">Add A New Recipe!</mat-toolbar>
 
-    <form class="create-post-form" fxLayoutAlign="stretch" fxLayout="column">
+    <form [formGroup]="createForm" (ngSubmit)="createPost()" class="create-post-form" fxLayoutAlign="stretch" fxLayout="column">
       <mat-form-field>
-        <input matInput placeholder="Title">
+        <input matInput formControlName="title" placeholder="Title">
         <mat-icon matSuffix>menu_book</mat-icon>
       </mat-form-field>
 
       <mat-form-field class="content-form">
-        <input matInput placeholder="Content">
+        <input matInput formControlName="content" placeholder="Content">
         <mat-icon matSuffix>restaurant</mat-icon>
       </mat-form-field>
 
