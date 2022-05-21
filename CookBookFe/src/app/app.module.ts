@@ -29,6 +29,7 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import {JwtModule} from "@auth0/angular-jwt";
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -45,7 +46,8 @@ export function tokenGetter() {
     AdminRegisterComponent,
     AdminLoginComponent,
     UserProfileComponent,
-    AdminProfileComponent
+    AdminProfileComponent,
+    CreatePostComponent
   ],
     imports: [
         BrowserModule,

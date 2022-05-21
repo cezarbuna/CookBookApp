@@ -9,6 +9,7 @@ import {AdminLoginComponent} from "./components/admin-login/admin-login.componen
 import {AdminRegisterComponent} from "./components/admin-register/admin-register.component";
 import {AdminProfileComponent} from "./components/admin-profile/admin-profile.component";
 import {UserProfileComponent} from "./components/user-profile/user-profile.component";
+import {CreatePostComponent} from "./components/create-post/create-post.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'admin-register', component: AdminRegisterComponent},
   { path: 'user-profile', component: UserProfileComponent},
-  { path: 'admin-profile', component: AdminProfileComponent}
+  { path: 'admin-profile', component: AdminProfileComponent},
+  { path: 'create-post', component: CreatePostComponent}
 ];
 
 @NgModule({
