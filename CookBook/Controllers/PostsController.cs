@@ -85,7 +85,7 @@ namespace CookBook.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreatePost(PostPutPostDto newPost)
+        public async Task<IActionResult> CreatePost([FromBody] PostPutPostDto newPost)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
