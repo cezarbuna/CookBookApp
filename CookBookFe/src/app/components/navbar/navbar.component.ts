@@ -32,6 +32,15 @@ export class NavbarComponent implements OnInit {
   }
 
   logOut() {
+    /*localStorage.removeItem("jwt");
+
+    if(localStorage.getItem("userId"))
+      localStorage.removeItem("userId");
+    if(localStorage.getItem("adminId"))
+      localStorage.removeItem("adminId");
+
+    this.router.navigate(["/home"]);*/
+
     localStorage.removeItem("jwt");
 
     if(localStorage.getItem("userId"))
