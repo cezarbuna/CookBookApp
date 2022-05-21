@@ -22,6 +22,9 @@ namespace CookBook.Application.QueryHandlers.UserQueryHandlers
         {
             var id = repository.GetEntityBy(x => x.UserName == request.UserName).Id;
 
+            if (id == Guid.Empty)
+                return Task.FromResult(Guid.Empty);
+
             return Task.FromResult(id);
         }
     }

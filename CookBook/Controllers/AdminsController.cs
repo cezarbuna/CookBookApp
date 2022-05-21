@@ -36,6 +36,23 @@ namespace CookBook.Controllers
         }
 
         [HttpGet]
+        [Route("get-admin-id-by-normal-id/{normalId}")]
+        public async Task<IActionResult> GetAdminIdById(Guid normalId)
+        {
+            var query = new GetAdminIdById
+            {
+                NormalId = normalId
+            };
+
+            var adminId = await _mediator.Send(query);
+
+            if (adminId == Guid.Empty)
+                return NoContent();
+
+            return Ok(adminId);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> GetAllAdmins()
         {
             var admins = await _mediator.Send(new GetAllAdmins());

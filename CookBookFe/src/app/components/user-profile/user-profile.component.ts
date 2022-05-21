@@ -27,12 +27,12 @@ export class UserProfileComponent implements OnInit {
     })
 
     this.editProfileForm = this.formBuilder.group({
-      userName: this.user.userName,
-      password: this.user.password,
-      email: this.user.email,
-      phoneNumber: this.user.phoneNumber,
-      currentOccupation: this.user.currentOccupation,
-      description: this.user.description
+      userName: [''],
+      password: [''],
+      email: [''],
+      phoneNumber: [''],
+      currentOccupation: [''],
+      description: ['']
     })
   }
 

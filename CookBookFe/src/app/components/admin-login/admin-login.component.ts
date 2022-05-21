@@ -70,9 +70,11 @@ export class AdminLoginComponent implements OnInit {
         const token = (<any>res).token;
         localStorage.setItem("jwt", token);
         this.invalidLogin = false;
+        alert("Admin login successful!");
         this.router.navigate(["/home"]);
       }, err => {
-        console.log("Invalid credentials!");
+        alert("Invalid admin credentials!");
+        console.log("Invalid admin credentials!");
         this.invalidLogin = true;
       })
   }
