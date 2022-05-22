@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookBook", "CookBook.csproj", "{A486A23D-1B8E-473D-8BDB-C1B9F953FB42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookBook", "CookBook.csproj", "{A486A23D-1B8E-473D-8BDB-C1B9F953FB42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookBook.Application", "..\CookBook.Application\CookBook.Application.csproj", "{00933CBC-09B6-4929-808F-FF51AD274E14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookBook.Application", "..\CookBook.Application\CookBook.Application.csproj", "{00933CBC-09B6-4929-808F-FF51AD274E14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookBook.Domain", "..\CookBook.Domain\CookBook.Domain.csproj", "{9B74F686-FE01-43C4-B12E-C3028C09C154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookBook.Domain", "..\CookBook.Domain\CookBook.Domain.csproj", "{9B74F686-FE01-43C4-B12E-C3028C09C154}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookBook.Dal", "..\CookBook.Dal\CookBook.Dal.csproj", "{CBA1ABED-2329-4743-9C46-568A334E55CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CookBook.Dal", "..\CookBook.Dal\CookBook.Dal.csproj", "{CBA1ABED-2329-4743-9C46-568A334E55CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CookBook.UnitTests", "..\CookBook.UnitTests\CookBook.UnitTests.csproj", "{9C722896-6474-446E-BF82-A5042FBB0635}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CBA1ABED-2329-4743-9C46-568A334E55CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBA1ABED-2329-4743-9C46-568A334E55CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBA1ABED-2329-4743-9C46-568A334E55CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C722896-6474-446E-BF82-A5042FBB0635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C722896-6474-446E-BF82-A5042FBB0635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C722896-6474-446E-BF82-A5042FBB0635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C722896-6474-446E-BF82-A5042FBB0635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
