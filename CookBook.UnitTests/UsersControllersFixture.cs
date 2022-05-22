@@ -104,33 +104,33 @@ namespace CookBook.UnitTests
             _mockMediator.Verify(x => x.Send(It.IsAny<UpdateUser>(), It.IsAny<CancellationToken>()), Times.Once());
         }
 
-        [TestMethod]
-        public async Task Create_User_command_is_called()
-        {
-            //Arrange
-            _mockMediator
-                .Setup(m => m.Send(It.IsAny<CreateUser>(), It.IsAny<CancellationToken>()))
-                .Verifiable();
+        //[TestMethod]
+        //public async Task Create_User_command_is_called()
+        //{
+        //    //Arrange
+        //    _mockMediator
+        //        .Setup(m => m.Send(It.IsAny<CreateUser>(), It.IsAny<CancellationToken>()))
+        //        .Verifiable();
 
-            var userDto = new UserPutPostDto
-            {
-                UserName = "random username",
-                Password = "random password",
-                Email = "random email",
-                PhoneNumber = "073154321123",
-                CurrentOccupation = "random occupation",
-                Description = "random description"
-            };
+        //    var userDto = new UserPutPostDto
+        //    {
+        //        UserName = "random username",
+        //        Password = "random password",
+        //        Email = "random email",
+        //        PhoneNumber = "073154321123",
+        //        CurrentOccupation = "random occupation",
+        //        Description = "random description"
+        //    };
 
 
 
-            //Act
-            var controller = new UsersController(_mockMapper.Object, _mockMediator.Object);
-            await controller.CreateUser( userDto);
+        //    //Act
+        //    var controller = new UsersController(_mockMapper.Object, _mockMediator.Object);
+        //    await controller.CreateUser( userDto);
 
-            //Assert
-            _mockMediator.Verify(x => x.Send(It.IsAny<CreateUser>(), It.IsAny<CancellationToken>()), Times.Once());
-        }
+        //    //Assert
+        //    _mockMediator.Verify(x => x.Send(It.IsAny<CreateUser>(), It.IsAny<CancellationToken>()), Times.Once());
+        //}
 
 
     }
