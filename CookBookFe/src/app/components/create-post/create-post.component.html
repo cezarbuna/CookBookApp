@@ -12,9 +12,9 @@
         <input matInput formControlName="content" placeholder="Content">
         <mat-icon matSuffix>restaurant</mat-icon>
       </mat-form-field>
-      <span><button mat-button (click)="setPostCategory(0)" type="button">Breakfast</button></span>
-      <span><button mat-button (click)="setPostCategory(1)" type="button">Lunch</button></span>
-      <span><button mat-button (click)="setPostCategory(2)" type="button">Dinner</button></span>
+      <span><button (click)="setPostCategory(0)" type="button">Breakfast</button></span>
+      <span><button (click)="setPostCategory(1)" type="button">Lunch</button></span>
+      <span><button (click)="setPostCategory(2)" type="button">Dinner</button></span>
 
       <button mat-raised-button type="submit" color="primary">Submit</button>
       <br>

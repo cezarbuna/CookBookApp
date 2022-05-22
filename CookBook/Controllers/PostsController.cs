@@ -228,11 +228,12 @@ namespace CookBook.Controllers
 
         [HttpPatch]
         [Route("like-post/{id}")]
-        public async Task<IActionResult> LikePost(Guid id)
+        public async Task<IActionResult> LikePost(Guid id, [FromBody] int LikeCounter)
         {
             var command = new LikePost
             {
-                PostId = id
+                PostId = id,
+                LikeCounter = LikeCounter
             };
 
             var result = await _mediator.Send(command);
@@ -245,11 +246,12 @@ namespace CookBook.Controllers
 
         [HttpPatch]
         [Route("dislike-post/{id}")]
-        public async Task<IActionResult> DislikePost(Guid id)
+        public async Task<IActionResult> DislikePost(Guid id, [FromBody] int DislikeCounter)
         {
             var command = new DislikePost
             {
-                PostId = id
+                PostId = id,
+                DislikeCounter = DislikeCounter
             };
 
             var result = await _mediator.Send(command);
