@@ -246,11 +246,12 @@ namespace CookBook.Controllers
 
         [HttpPatch]
         [Route("dislike-post/{id}")]
-        public async Task<IActionResult> DislikePost(Guid id)
+        public async Task<IActionResult> DislikePost(Guid id, [FromBody] int DislikeCounter)
         {
             var command = new DislikePost
             {
-                PostId = id
+                PostId = id,
+                DislikeCounter = DislikeCounter
             };
 
             var result = await _mediator.Send(command);
