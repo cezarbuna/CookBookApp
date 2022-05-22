@@ -4,6 +4,6 @@ export interface PostInterface {
   title: string;
   content: string;
   likeCounter: number;
-  dislikeCounter: number;
+  dislikeCunter: number;
   category: number;
 }
