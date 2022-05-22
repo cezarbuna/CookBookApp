@@ -4,7 +4,7 @@
     <mat-card-title>{{post.title}}</mat-card-title>
     <mat-card-content>{{post.content}}</mat-card-content>
     <a mat-raised-button color="primary" (click)="likePost(post.id)">Like</a>
-    <a mat-raised-button color="warn">Dislike</a>
+    <a mat-raised-button color="warn" (click)="dislikePost(post.id)">Dislike</a>
     <br>
     <br>
     <p>{{post.likeCounter}} Likes</p>

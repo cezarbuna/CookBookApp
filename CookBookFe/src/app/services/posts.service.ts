@@ -46,6 +46,13 @@ export class PostsService {
       }))
   }
 
+  dislikePost(data: number, postId: string): Observable<PostInterface> {
+    return this.httpClient.patch<PostInterface>("https://localhost:7025/api/Posts/dislike-post/" + postId, data)
+      .pipe(map((res: any) => {
+        return res;
+      }))
+  }
+
   getAllPosts(): Observable<PostInterface[]> {
     return this.httpClient.get<PostInterface[]>("https://localhost:7025/api/Posts")
       .pipe(map((res: PostInterface[]) => {

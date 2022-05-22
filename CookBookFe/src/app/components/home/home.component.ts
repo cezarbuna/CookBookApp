@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit {
   id: string = "";
 
 
-  constructor(private postsService: PostsService, private commentsService: CommentsService, private userService: UsersService) { }
+  constructor(private postsService: PostsService, private commentsService: CommentsService, private userService: UsersService) {
+  }
 
   ngOnInit(): void {
 
@@ -47,32 +48,20 @@ export class HomeComponent implements OnInit {
   }
 
   likePost(postId: string) {
-    this.postsService.likePost(1,postId ).subscribe(res => {
+    this.postsService.likePost(1, postId).subscribe(res => {
       console.log("Like post method triggered!");
       console.log(res);
     })
   }
 
-  dislikePost(postId: string, dislikeCounter: number) {
-    this.postsService.getPostById(postId).subscribe(res => {
+  dislikePost(postId: string) {
+    this.postsService.dislikePost(1, postId).subscribe(res => {
+      console.log("Like post method triggered!");
       console.log(res);
-      console.log(res.likeCounter);
     })
   }
 
-  isUserAuthenticated() {
-    const token = localStorage.getItem("jwt");
-    return !!token;
-  }
-
-  logout() {
-    localStorage.removeItem("jwt");
-  }
-
-  /*
-  getCommentsByIdPost(postId: string): Observable<CommentInterface[]>{
-    return this.commentsService.getCommentsByPostId(postId);
-  }*/
-
-
 }
+
+
+
