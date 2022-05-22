@@ -73,7 +73,12 @@ export class HomeComponent implements OnInit {
   }
 
   goToCreateComment(postId: string){
-    this.router.navigate(['/create-comment', postId]);
+    if(localStorage.getItem("jwt")){
+      this.router.navigate(['/create-comment', postId]);
+    } else{
+      alert("You cannot like/dislike posts if you are not logged in!");
+    }
+
   }
 
 }
