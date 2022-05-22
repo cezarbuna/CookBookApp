@@ -1932,19 +1932,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cezar.buna\\.nuget\\packages\\": {}
+    "C:\\Users\\a\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
+      "projectUniqueName": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
       "projectName": "CookBook.Application",
-      "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
-      "packagesPath": "C:\\Users\\cezar.buna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\obj\\",
+      "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
+      "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+      "outputPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cezar.buna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1958,8 +1958,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
-              "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj"
+            "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
+              "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj"
             }
           }
         }
@@ -2008,7 +2008,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

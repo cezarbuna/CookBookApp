@@ -88,6 +88,25 @@ namespace CookBook.Controllers
         }
 
         [HttpPatch]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateComment(Guid id, [FromBody] CommentPutPostDto updatedComment)
+        {
+            var command = new UpdateComment
+            {
+                CommentId = id,
+                PostId = updatedComment.PostId,
+                Content = updatedComment.Content
+            };
+
+            var result = await _mediator.Send(command);
+
+            if (result == null)
+                return NotFound();
+
+            return NoContent();
+        }
+
+        [HttpPatch]
         [Route("{id}/{userId}/update-comment-content/{newCommentContent}")]
         public async Task<IActionResult> UpdateCommentContent(Guid id, Guid userId, string newCommentContent)
         {

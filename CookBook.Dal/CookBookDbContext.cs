@@ -23,7 +23,7 @@ namespace CookBook.Dal
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer(@"Server=ROMOB41211\SQLEXPRESS01;Database=SefDB;Trusted_Connection=True;", b => b.MigrationsAssembly("CookBook.Dal"))
+                .UseSqlServer(@"Server=DESKTOP-KNRAE7D;Database=SefDB;Trusted_Connection=True;", b => b.MigrationsAssembly("CookBook.Dal"))
                 .EnableSensitiveDataLogging();
         }
 

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.UnitTests\\CookBook.UnitTests.csproj": {}
+    "D:\\Faculta\\SEF\\CookBookApp\\CookBook.UnitTests\\CookBook.UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj": {
+    "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
+        "projectUniqueName": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
         "projectName": "CookBook.Application",
-        "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
-        "packagesPath": "C:\\Users\\cezar.buna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\obj\\",
+        "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj",
+        "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+        "outputPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cezar.buna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
-                "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj"
+              "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
+                "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj"
               }
             }
           }
@@ -78,21 +78,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj": {
+    "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj",
+        "projectUniqueName": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj",
         "projectName": "CookBook.Dal",
-        "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj",
-        "packagesPath": "C:\\Users\\cezar.buna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Dal\\obj\\",
+        "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj",
+        "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+        "outputPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Dal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cezar.buna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,8 +106,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
-                "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj"
+              "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
+                "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj"
               }
             }
           }
@@ -160,21 +160,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
+    "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj",
+        "projectUniqueName": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj",
         "projectName": "CookBook.Domain",
-        "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj",
-        "packagesPath": "C:\\Users\\cezar.buna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\obj\\",
+        "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj",
+        "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+        "outputPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cezar.buna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -230,21 +230,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.UnitTests\\CookBook.UnitTests.csproj": {
+    "D:\\Faculta\\SEF\\CookBookApp\\CookBook.UnitTests\\CookBook.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.UnitTests\\CookBook.UnitTests.csproj",
+        "projectUniqueName": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.UnitTests\\CookBook.UnitTests.csproj",
         "projectName": "CookBook.UnitTests",
-        "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.UnitTests\\CookBook.UnitTests.csproj",
-        "packagesPath": "C:\\Users\\cezar.buna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.UnitTests\\obj\\",
+        "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.UnitTests\\CookBook.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+        "outputPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cezar.buna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -258,11 +258,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj": {
-                "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj"
+              "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj": {
+                "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj"
               },
-              "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook\\CookBook.csproj": {
-                "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook\\CookBook.csproj"
+              "D:\\Faculta\\SEF\\CookBookApp\\CookBook\\CookBook.csproj": {
+                "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook\\CookBook.csproj"
               }
             }
           }
@@ -313,21 +313,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook\\CookBook.csproj": {
+    "D:\\Faculta\\SEF\\CookBookApp\\CookBook\\CookBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook\\CookBook.csproj",
+        "projectUniqueName": "D:\\Faculta\\SEF\\CookBookApp\\CookBook\\CookBook.csproj",
         "projectName": "CookBook",
-        "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook\\CookBook.csproj",
-        "packagesPath": "C:\\Users\\cezar.buna\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook\\obj\\",
+        "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook\\CookBook.csproj",
+        "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+        "outputPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\cezar.buna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -341,14 +341,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj": {
-                "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj"
+              "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj": {
+                "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Application\\CookBook.Application.csproj"
               },
-              "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj": {
-                "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj"
+              "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj": {
+                "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Dal\\CookBook.Dal.csproj"
               },
-              "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
-                "projectPath": "C:\\Users\\cezar.buna\\Desktop\\SEF\\CookBookApp\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj"
+              "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj": {
+                "projectPath": "D:\\Faculta\\SEF\\CookBookApp\\CookBook.Domain\\CookBook.Domain.csproj"
               }
             }
           }
@@ -426,7 +426,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

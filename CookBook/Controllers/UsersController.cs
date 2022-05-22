@@ -48,7 +48,7 @@ namespace CookBook.Controllers
 
         [HttpGet]
         [Route("get-user-id-by-username/{userName}")]
-        public async Task<IActionResult> GetUserIdByEmail(string userName)
+        public async Task<IActionResult> GetUserIdByUsername(string userName)
         {
             var query = new GetUserIdByUsername
             {
