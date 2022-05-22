@@ -32,6 +32,7 @@ import { AdminProfileComponent } from './components/admin-profile/admin-profile.
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { OwnedPostsComponent } from './components/owned-posts/owned-posts.component';
 import { EditPostComponent } from './components/edit-post/edit-post.component';
+import { CreateCommentComponent } from './components/create-comment/create-comment.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -51,7 +52,8 @@ export function tokenGetter() {
     AdminProfileComponent,
     CreatePostComponent,
     OwnedPostsComponent,
-    EditPostComponent
+    EditPostComponent,
+    CreateCommentComponent
   ],
     imports: [
         BrowserModule,

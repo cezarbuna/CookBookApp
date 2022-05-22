@@ -11,6 +11,7 @@
     <p>{{post.dislikeCunter}} Dislikes</p>
     <mat-list>
       Comments
+      <a mat-raised-button color="primary" (click)="goToCreateComment(post.id)">Add a comment!</a>
       <mat-list-item *ngFor="let comment of comments">
         <div class="comment-block">
           {{comment.content}}
