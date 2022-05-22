@@ -19,11 +19,21 @@ export class CommentsService {
   }
 
   getCommentsByPostId(id: string): Observable<CommentInterface[]> {
-    return this.httpClient.get<CommentInterface[]>(`https://localhost:7025/api/Comments/get-all-comments-by-post-id/${id}`);
+    return this.httpClient.get<CommentInterface[]>(`https://localhost:7025/api/Comments/get-all-comments-by-post-id/${id}`)
+      .pipe(map((res: CommentInterface[]) => {
+        return res;
+      }))
   }
 
   getAllComments(): Observable<CommentInterface[]> {
     return this.httpClient.get<CommentInterface[]>("https://localhost:7025/api/Comments");
+  }
+
+  deleteComment(id: string, userId: string) {
+    return this.httpClient.delete<CommentInterface>("https://localhost:7025/api/Comments/" + id + "/" + userId)
+      .pipe(map((res: any) => {
+        return res;
+      }))
   }
 
 
