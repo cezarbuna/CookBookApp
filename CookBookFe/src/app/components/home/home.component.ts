@@ -24,13 +24,17 @@ export class HomeComponent implements OnInit {
 
   currentUser!: UserInterface;
 
-  id: string = "";
+  currentUserId!: string;
 
 
   constructor(private postsService: PostsService, private commentsService: CommentsService, private userService: UsersService, private  router: Router) {
   }
 
   ngOnInit(): void {
+
+    this.currentUserId = localStorage.getItem("userId")!;
+    console.log("Current logged user is:");
+    console.log(this.currentUserId);
 
     this.postsService.getAllPosts().subscribe(data => {
       this.posts = data;
@@ -46,6 +50,34 @@ export class HomeComponent implements OnInit {
       console.log(res);
     })
 
+  }
+
+  deleteComment(commentId: string, userId: string){
+    if(localStorage.getItem("jwt")){
+      if(userId === localStorage.getItem("userId")){
+        this.commentsService.deleteComment(commentId, userId).subscribe(res => {
+          console.log("Logged comment deletion from home component!");
+          console.log(res);
+          alert("Deletion successful!");
+        })
+      }else{
+        alert("You cannot only delete your own comments!");
+      }
+    }else {
+      alert("You cannot delete comments as a non logged user! Please log in!");
+      this.router.navigate(['/login']);
+    }
+  }
+
+  getAllCommentsByPostId(postId: string): CommentInterface[] {
+    let comments: CommentInterface[] = [];
+    this.commentsService.getCommentsByPostId(postId).subscribe(res => {
+      console.log("Logged comments belonging to the post: " + postId);
+      console.log(res);
+      comments = res;
+    })
+
+    return comments;
   }
 
   likePost(postId: string) {
