@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 import {C} from "@angular/cdk/keycodes";
 import {UserInterface} from "../../models/user-interface";
 import {UsersService} from "../../services/users.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,7 @@ export class HomeComponent implements OnInit {
   id: string = "";
 
 
-  constructor(private postsService: PostsService, private commentsService: CommentsService, private userService: UsersService) {
+  constructor(private postsService: PostsService, private commentsService: CommentsService, private userService: UsersService, private  router: Router) {
   }
 
   ngOnInit(): void {
@@ -48,17 +49,36 @@ export class HomeComponent implements OnInit {
   }
 
   likePost(postId: string) {
-    this.postsService.likePost(1, postId).subscribe(res => {
-      console.log("Like post method triggered!");
-      console.log(res);
-    })
+    if(localStorage.getItem("jwt")){
+      this.postsService.likePost(1, postId).subscribe(res => {
+        console.log("Like post method triggered!");
+        console.log(res);
+      })
+    }else{
+      alert("You cannot like/dislike posts if you are not logged in!");
+    }
+
   }
 
   dislikePost(postId: string) {
-    this.postsService.dislikePost(1, postId).subscribe(res => {
-      console.log("Like post method triggered!");
-      console.log(res);
-    })
+    if(localStorage.getItem("jwt")){
+      this.postsService.dislikePost(1, postId).subscribe(res => {
+        console.log("Like post method triggered!");
+        console.log(res);
+      })
+    } else{
+      alert("You cannot like/dislike posts if you are not logged in!");
+    }
+
+  }
+
+  goToCreateComment(postId: string){
+    if(localStorage.getItem("jwt")){
+      this.router.navigate(['/create-comment', postId]);
+    } else{
+      alert("You cannot like/dislike posts if you are not logged in!");
+    }
+
   }
 
 }

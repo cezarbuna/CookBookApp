@@ -59,7 +59,7 @@ namespace CookBook.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateComment(CommentPutPostDto newComment)
+        public async Task<IActionResult> CreateComment([FromBody] CommentPutPostDto newComment)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
