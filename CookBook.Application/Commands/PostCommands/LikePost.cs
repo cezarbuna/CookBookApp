@@ -11,5 +11,6 @@ namespace CookBook.Application.Commands.PostCommands
     public class LikePost : IRequest<Post>
     {
         public Guid PostId { get; set; }
+        public int LikeCounter { get; set; }
     }
 }

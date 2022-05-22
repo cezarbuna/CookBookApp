@@ -23,7 +23,7 @@ namespace CookBook.Application.CommandHandlers.PostCommandHandlers
         {
             var post = repository.GetEntityByID(request.PostId);
 
-            post.LikeCounter++;
+            post.LikeCounter += request.LikeCounter;
 
             repository.Update(post);
             repository.SaveChanges();

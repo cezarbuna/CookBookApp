@@ -46,6 +46,20 @@ export class HomeComponent implements OnInit {
 
   }
 
+  likePost(postId: string) {
+    this.postsService.likePost(1,postId ).subscribe(res => {
+      console.log("Like post method triggered!");
+      console.log(res);
+    })
+  }
+
+  dislikePost(postId: string, dislikeCounter: number) {
+    this.postsService.getPostById(postId).subscribe(res => {
+      console.log(res);
+      console.log(res.likeCounter);
+    })
+  }
+
   isUserAuthenticated() {
     const token = localStorage.getItem("jwt");
     return !!token;

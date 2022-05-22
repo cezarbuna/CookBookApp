@@ -3,10 +3,10 @@
   <mat-card *ngFor="let post of posts">
     <mat-card-title>{{post.title}}</mat-card-title>
     <mat-card-content>{{post.content}}</mat-card-content>
-    <a mat-raised-button color="primary">Like</a>
+    <a mat-raised-button color="primary" (click)="likePost(post.id)">Like</a>
     <a mat-raised-button color="warn">Dislike</a>
     <br>
-    <br>  
+    <br>
     <p>{{post.likeCounter}} Likes</p>
     <p>{{post.dislikeCunter}} Dislikes</p>
     <mat-list>
