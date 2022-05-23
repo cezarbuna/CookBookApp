@@ -27,12 +27,19 @@ export class EditCommentComponent implements OnInit {
     this.userId = localStorage.getItem("userId")!;
 
     this.editCommentForm = this.formBuilder.group({
-      id: [this.commentId],
-      userId: [this.userId],
       newCommentContent: ['']
     })
 
 
+  }
+
+  updateComment() {
+    this.commentService.updateCommentContent(this.editCommentForm.value, this.commentId, this.userId)
+      .subscribe(res => {
+        console.log(res);
+        this.editCommentForm.reset();
+        this.router.navigate(['/home']);
+      })
   }
 
 }

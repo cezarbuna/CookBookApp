@@ -18,6 +18,13 @@ export class CommentsService {
       }))
   }
 
+  updateCommentContent(data: string, id: string, userId: string): Observable<CommentInterface>{
+    return this.httpClient.patch<CommentInterface>(`https://localhost:7025/api/Comments/${id}/${userId}/update-comment-content`, data)
+      .pipe(map((res: CommentInterface) => {
+        return res;
+      }))
+  }
+
   getCommentsByPostId(id: string): Observable<CommentInterface[]> {
     return this.httpClient.get<CommentInterface[]>(`https://localhost:7025/api/Comments/get-all-comments-by-post-id/${id}`)
       .pipe(map((res: CommentInterface[]) => {

@@ -2,9 +2,9 @@
   <mat-card fxFlex="45" class="mat-elevation-z8">
     <mat-toolbar color="primary">Edit Your Post</mat-toolbar>
 
-    <form [formGroup]="editCommentForm" class="edit-profile-form" fxLayoutAlign="stretch" fxLayout="column">
+    <form [formGroup]="editCommentForm" (ngSubmit)="updateComment()" class="edit-profile-form" fxLayoutAlign="stretch" fxLayout="column">
       <mat-form-field>
-        <input matInput formControlName="title" placeholder="New Comment Content" required>
+        <input matInput formControlName="newCommentContent" placeholder="New Comment Content" required>
         <mat-icon matSuffix>menu_book</mat-icon>
       </mat-form-field>
 
