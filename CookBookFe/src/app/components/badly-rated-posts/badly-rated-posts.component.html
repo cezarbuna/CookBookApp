@@ -1,0 +1,12 @@
+<div *ngFor="let post of badlyRatedPosts" class="bad-posts" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="45" class="mat-elevation-z8">
+    <mat-toolbar color="primary">{{post.title}}</mat-toolbar>
+    <mat-card-content>{{post.content}}</mat-card-content>
+    <mat-card-content>{{post.likeCounter}} Likes</mat-card-content>
+    <mat-card-content>{{post.dislikeCunter}} Dislikes</mat-card-content>
+
+    <button mat-raised-button color="warn" (click)="deletePost(post.id)"><mat-icon>delete</mat-icon>DELETE</button>
+  </mat-card>
+</div>
+
+

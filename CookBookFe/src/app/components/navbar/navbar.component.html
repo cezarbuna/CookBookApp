@@ -9,6 +9,7 @@ menu_book
 
     <div class="navbar-spacer"></div>
 
+    <a mat-button routerLink="badly-rated-posts" *ngIf="isLoggedInAsAdminChecker()">Bad Posts</a>
     <a mat-button routerLink="/create-post" *ngIf="isLoggedInAsUserChecker()">CREATE</a>
     <a mat-button routerLink="/owned-posts" *ngIf="isLoggedInAsUserChecker()">Your Posts</a>
     <a mat-button routerLink="/user-profile" *ngIf="isLoggedInAsUserChecker()">

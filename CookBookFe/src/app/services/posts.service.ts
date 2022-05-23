@@ -60,6 +60,13 @@ export class PostsService {
       }))
   }
 
+  getBadlyRatedPosts(): Observable<PostInterface[]> {
+    return this.httpClient.get<PostInterface[]>("https://localhost:7025/api/Posts/get-all-badly-rated-posts")
+      .pipe(map((res: PostInterface[]) => {
+        return res;
+      }))
+  }
+
   deletePost(postId: string){
     return this.httpClient.delete<PostInterface>("https://localhost:7025/api/Posts/" + postId)
       .pipe(map((res: PostInterface) => {
