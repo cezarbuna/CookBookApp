@@ -145,21 +145,12 @@ namespace CookBook.Controllers
                 UserId = userId
             };
 
-            Comment foundComment = null;
+            var foundComment = await _mediator.Send(command);
 
-            try
-            {
-                foundComment = await _mediator.Send(command);
-
-                if (foundComment == null) return NotFound();
-
-                return NoContent();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.StackTrace);
+            if (foundComment == null)
                 return NotFound();
-            }
+
+            return NoContent();
            
         }
     }
