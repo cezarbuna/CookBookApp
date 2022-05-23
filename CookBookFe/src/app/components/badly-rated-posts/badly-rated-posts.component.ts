@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PostInterface} from "../../models/post-interface";
+import {PostsService} from "../../services/posts.service";
 
 @Component({
   selector: 'app-badly-rated-posts',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BadlyRatedPostsComponent implements OnInit {
 
-  constructor() { }
+  badlyRatedPosts: PostInterface[] = [];
+
+
+  constructor(private postService: PostsService) { }
 
   ngOnInit(): void {
+    this.postService.getBadlyRatedPosts().subscribe(res => {
+      console.log("Logged bad posts from badly-rated-posts component:");
+      console.log(res);
+      this.badlyRatedPosts = res;
+    })
+  }
+
+  deletePost(postId: string){
+    return this.postService.deletePost(postId).subscribe(res => {
+      console.log("Deleted post from badly-rated-posts component.");
+      console.log(res);
+    })
   }
 
 }
