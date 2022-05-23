@@ -60,6 +60,13 @@ export class PostsService {
       }))
   }
 
+  getAllPostsByCategory(category: number): Observable<PostInterface[]>{
+    return this.httpClient.get<PostInterface[]>("https://localhost:7025/api/Posts/get-all-posts-by-category/" + category)
+      .pipe(map((res: PostInterface[]) => {
+        return res;
+      }))
+  }
+
   getBadlyRatedPosts(): Observable<PostInterface[]> {
     return this.httpClient.get<PostInterface[]>("https://localhost:7025/api/Posts/get-all-badly-rated-posts")
       .pipe(map((res: PostInterface[]) => {
