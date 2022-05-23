@@ -18,6 +18,9 @@
         <div class="comment-block">
           {{comment.content}}
           <span>
+            <a mat-button (click)="goToEditComment(comment.id)"><mat-icon>edit</mat-icon></a>
+          </span>
+          <span>
             <a mat-button (click)="deleteComment(comment.id, this.currentUserId)" ><mat-icon >delete</mat-icon></a>
           </span>
         </div>

@@ -14,6 +14,7 @@ import {OwnedPostsComponent} from "./components/owned-posts/owned-posts.componen
 import {EditPostComponent} from "./components/edit-post/edit-post.component";
 import {CreateCommentComponent} from "./components/create-comment/create-comment.component";
 import {BadlyRatedPostsComponent} from "./components/badly-rated-posts/badly-rated-posts.component";
+import {EditCommentComponent} from "./components/edit-comment/edit-comment.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'owned-posts', component: OwnedPostsComponent},
   { path: 'edit-post/:id', component: EditPostComponent},
   { path: 'create-comment/:id', component: CreateCommentComponent},
-  { path: 'badly-rated-posts', component: BadlyRatedPostsComponent}
+  { path: 'badly-rated-posts', component: BadlyRatedPostsComponent},
+  { path: 'edit-comment/:id', component: EditCommentComponent}
 ];
 
 @NgModule({
