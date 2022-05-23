@@ -144,6 +144,10 @@ export class HomeComponent implements OnInit {
     this.posts = this.dinnerPosts;
   }
 
+  goToEditComment(commentId: string){
+    this.router.navigate(['/edit-comment', commentId]);
+  }
+
 }
 
 

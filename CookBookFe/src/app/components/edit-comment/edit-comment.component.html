@@ -1,0 +1,15 @@
+<div class="edit-post" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="45" class="mat-elevation-z8">
+    <mat-toolbar color="primary">Edit Your Post</mat-toolbar>
+
+    <form [formGroup]="editCommentForm" (ngSubmit)="updateComment()" class="edit-profile-form" fxLayoutAlign="stretch" fxLayout="column">
+      <mat-form-field>
+        <input matInput formControlName="newCommentContent" placeholder="New Comment Content" required>
+        <mat-icon matSuffix>menu_book</mat-icon>
+      </mat-form-field>
+
+      <button mat-raised-button type="submit" color="primary">Save changes</button>
+      <button mat-raised-button type="button" color="primary" routerLink="/home">Discard</button>
+    </form>
+  </mat-card>
+</div>

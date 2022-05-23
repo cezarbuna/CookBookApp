@@ -107,8 +107,8 @@ namespace CookBook.Controllers
         }
 
         [HttpPatch]
-        [Route("{id}/{userId}/update-comment-content/{newCommentContent}")]
-        public async Task<IActionResult> UpdateCommentContent(Guid id, Guid userId, string newCommentContent)
+        [Route("{id}/{userId}/update-comment-content")]
+        public async Task<IActionResult> UpdateCommentContent(Guid id, Guid userId, [FromBody] string newCommentContent)
         {
             var command = new UpdateCommentContent
             {
