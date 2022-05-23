@@ -101,6 +101,27 @@ namespace CookBook.UnitTests
         }
 
         [TestMethod]
+        public async Task Update_Comment_Content_command_is_called()
+        {
+            //Arrange
+            _mockMediator
+                .Setup(m => m.Send(It.IsAny<UpdateCommentContent>(), It.IsAny<CancellationToken>()))
+                .Verifiable();
+
+            //random test comment Id
+            var id = Guid.NewGuid();
+            var userId = Guid.NewGuid();
+            var newTestContent = "random new comment content";
+
+            //Act
+            var controller = new CommentsController(_mockMapper.Object, _mockMediator.Object);
+            await controller.UpdateCommentContent(id, userId, newTestContent);
+
+            //Assert
+            _mockMediator.Verify(x => x.Send(It.IsAny<UpdateCommentContent>(), It.IsAny<CancellationToken>()), Times.Once());
+        }
+
+        [TestMethod]
         public async Task Delete_Comment_command_is_called()
         {
             //Arrange
