@@ -38,7 +38,7 @@ namespace CookBook.Application.CommandHandlers.CommentCommandHandlers
             }
             else
             {
-                throw new Exception("You cannot edit other user's comments!");
+                return null;
             }
         }
     }
