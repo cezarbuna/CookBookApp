@@ -34,4 +34,11 @@ export class OwnedPostsComponent implements OnInit {
     this.router.navigate(['/edit-post', postId]);
   }
 
+  deletePost(postId: string){
+    return this.postService.deletePost(postId).subscribe(res => {
+      console.log("Deleted post from owned posts component.");
+      console.log(res);
+    })
+  }
+
 }
