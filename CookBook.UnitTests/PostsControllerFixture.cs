@@ -157,6 +157,46 @@ namespace CookBook.UnitTests
             //Assert
             _mockMediator.Verify(x => x.Send(It.IsAny<DeletePost>(), It.IsAny<CancellationToken>()), Times.Once());
         }
+
+        [TestMethod]
+        public async Task Like_Post_command_is_called()
+        {
+            //Arrange
+            _mockMediator
+                .Setup(m => m.Send(It.IsAny<LikePost>(), It.IsAny<CancellationToken>()))
+                .Verifiable();
+
+            //random test post ID
+            var postId = Guid.NewGuid();
+            var randomLikeCounter = 1;
+
+            //Act
+            var controller = new PostsController(_mockMapper.Object, _mockMediator.Object);
+            await controller.LikePost(postId, randomLikeCounter);
+
+            //Assert
+            _mockMediator.Verify(x => x.Send(It.IsAny<LikePost>(), It.IsAny<CancellationToken>()), Times.Once());
+        }
+
+        [TestMethod]
+        public async Task Dislike_Post_command_is_called()
+        {
+            //Arrange
+            _mockMediator
+                .Setup(m => m.Send(It.IsAny<DislikePost>(), It.IsAny<CancellationToken>()))
+                .Verifiable();
+
+            //random test post ID
+            var postId = Guid.NewGuid();
+            var randomDislikeCounter = 1;
+
+            //Act
+            var controller = new PostsController(_mockMapper.Object, _mockMediator.Object);
+            await controller.DislikePost(postId, randomDislikeCounter);
+
+            //Assert
+            _mockMediator.Verify(x => x.Send(It.IsAny<DislikePost>(), It.IsAny<CancellationToken>()), Times.Once());
+        }
     }
 
     
