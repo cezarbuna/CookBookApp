@@ -18,11 +18,12 @@ export class HomeComponent implements OnInit {
 
   posts: PostInterface[] = [];
   comments: CommentInterface[] = [];
-  //commentsByPostId: CommentInterface[] = [];
 
-  //tempPostId: string = "1adc9ff2-6a17-43cd-3398-08da372aed54";
+  breakfastPosts: PostInterface[] = [];
+  lunchPosts: PostInterface[] = [];
+  dinnerPosts: PostInterface[] = [];
 
-  currentUser!: UserInterface;
+  selectedCategory: number = 3; //default is 3 which means no category has been selected
 
   currentUserId!: string;
 
@@ -39,6 +40,24 @@ export class HomeComponent implements OnInit {
     this.postsService.getAllPosts().subscribe(data => {
       this.posts = data;
       console.log(data);
+    })
+
+    this.postsService.getAllPostsByCategory(0).subscribe(res => {
+      console.log("Breakfast posts logged from home component:");
+      console.log(res);
+      this.breakfastPosts = res;
+    })
+
+    this.postsService.getAllPostsByCategory(1).subscribe(res => {
+      console.log("Lunch posts logged from home component:");
+      console.log(res);
+      this.lunchPosts = res;
+    })
+
+    this.postsService.getAllPostsByCategory(2).subscribe(res => {
+      console.log("Dinner posts logged from home component:");
+      console.log(res);
+      this.dinnerPosts = res;
     })
 
     this.commentsService.getAllComments().subscribe(data => {
@@ -108,9 +127,21 @@ export class HomeComponent implements OnInit {
     if(localStorage.getItem("jwt")){
       this.router.navigate(['/create-comment', postId]);
     } else{
-      alert("You cannot like/dislike posts if you are not logged in!");
+      alert("You cannot comment on other posts if you are not logged in!");
     }
 
+  }
+
+  selectBreakfast() {
+    this.posts = this.breakfastPosts;
+  }
+
+  selectLunch() {
+    this.posts = this.lunchPosts;
+  }
+
+  selectDinner() {
+    this.posts = this.dinnerPosts;
   }
 
 }

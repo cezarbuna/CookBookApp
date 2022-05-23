@@ -1,4 +1,6 @@
-
+<button mat-raised-button color="primary" (click)="selectBreakfast()">Breakfast</button>
+<button mat-raised-button color="primary" (click)="selectLunch()">Lunch</button>
+<button mat-raised-button color="primary" (click)="selectDinner()">Dinner</button>
 <div>
   <mat-card *ngFor="let post of posts">
     <mat-card-title>{{post.title}}</mat-card-title>
