@@ -34,6 +34,7 @@ import { OwnedPostsComponent } from './components/owned-posts/owned-posts.compon
 import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { CreateCommentComponent } from './components/create-comment/create-comment.component';
 import { BadlyRatedPostsComponent } from './components/badly-rated-posts/badly-rated-posts.component';
+import { EditCommentComponent } from './components/edit-comment/edit-comment.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -55,7 +56,8 @@ export function tokenGetter() {
     OwnedPostsComponent,
     EditPostComponent,
     CreateCommentComponent,
-    BadlyRatedPostsComponent
+    BadlyRatedPostsComponent,
+    EditCommentComponent
   ],
     imports: [
         BrowserModule,
