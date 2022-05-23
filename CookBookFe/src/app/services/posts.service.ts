@@ -60,6 +60,13 @@ export class PostsService {
       }))
   }
 
+  deletePost(postId: string){
+    return this.httpClient.delete<PostInterface>("https://localhost:7025/api/Posts/" + postId)
+      .pipe(map((res: PostInterface) => {
+        return res;
+      }))
+  }
+
   get(): any {
     return this.httpClient.get("");
   }
